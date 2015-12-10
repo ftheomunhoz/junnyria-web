@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="junnyria">
+<head>
+    <meta charset="UTF-8">
+    <title>Junnyria</title>
+
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="assets/style/custom-bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Material Design -->
+    <link href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
+
+    <!-- Flaticon -->
+    <link href="assets/style/flaticons/flaticon.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div ui-view></div>
+</div>
+
+
+<!-- Bootstrap -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
+<script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+<script>
+    $.material.init();
+</script>
+
+
+<!-- AngularJS -->
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+<!-- App -->
+<script src="junnyria.js"></script>
+<script src="modules/common/common.module.js"></script>
+<script src="modules/common/common.config.js"></script>
+<script src="modules/common/common.run.js"></script>
+<script src="modules/common/controllers/login.js"></script>
+
+</body>
+
+</html>

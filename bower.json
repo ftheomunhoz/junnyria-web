@@ -1,0 +1,30 @@
+{
+  "name": "junnyria-web",
+  "description": "Junnyria Web App",
+  "main": "app.js",
+  "authors": [
+    "ftheomunhoz@gmail.com"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "rpg",
+    "junnyria",
+    "web",
+    "angularjs"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-material-design": "~0.5.5",
+    "angular": "~1.4.8",
+    "angular-ui-router": "~0.2.15"
+  }
+}

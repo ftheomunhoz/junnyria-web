@@ -1,0 +1,28 @@
+{
+  "name": "junnyria-web",
+  "version": "1.0.0",
+  "description": "Junnyria Web App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ftheomunhoz/junnyria-web.git"
+  },
+  "keywords": [
+    "rpg",
+    "junnyria",
+    "web",
+    "angularjs"
+  ],
+  "author": "ftheomunhoz@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ftheomunhoz/junnyria-web/issues"
+  },
+  "homepage": "https://github.com/ftheomunhoz/junnyria-web#readme",
+  "devDependencies": {
+    "http-server": "^0.8.5"
+  }
+}
