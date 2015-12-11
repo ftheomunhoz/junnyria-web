@@ -8,6 +8,7 @@
     "use strict";
 
     angular.module('junnyria',[
-        'junnyria.common'
+        'junnyria.common',
+        'junnyria.player'
     ]);
 })();

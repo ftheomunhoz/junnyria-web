@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <title>Junnyria</title>
 
-    <!-- Material Design fonts -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Roboto -->
+    <link rel="stylesheet" href="bower_components/roboto-fontface/css/roboto-fontface.css">
 
     <!-- Bootstrap -->
     <link href="assets/style/custom-bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -17,18 +16,28 @@
 
     <!-- Flaticon -->
     <link href="assets/style/flaticons/flaticon.css" rel="stylesheet">
+
+    <style>
+        .main-content {
+            padding: 50px 70px;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
-    <div ui-view></div>
+<div class="main-content">
+    <div class="container-fluid">
+        <div ui-view></div>
+    </div>
 </div>
 
 
 <!-- Bootstrap -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
-<script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+<script src="assets/style/custom-bootstrap/js/bootstrap.min.js"></script>
+<script src="bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
+<script src="bower_components/arrive/minified/arrive.min.js"></script>
+<script src="bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
 <script>
     $.material.init();
 </script>
@@ -44,6 +53,13 @@
 <script src="modules/common/common.config.js"></script>
 <script src="modules/common/common.run.js"></script>
 <script src="modules/common/controllers/login.js"></script>
+<script src="modules/common/services/login.js"></script>
+<script src="modules/common/factories/login.js"></script>
+<script src="modules/common/factories/activeUser.js"></script>
+
+<script src="modules/player/player.module.js"></script>
+<script src="modules/player/player.config.js"></script>
+<script src="modules/player/controllers/player.js"></script>
 
 </body>
 
