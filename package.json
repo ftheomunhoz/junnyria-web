@@ -22,6 +22,9 @@
     "url": "https://github.com/ftheomunhoz/junnyria-web/issues"
   },
   "homepage": "https://github.com/ftheomunhoz/junnyria-web#readme",
+  "dependencies": {
+    "http-server": "^0.8.5"
+  },
   "devDependencies": {
     "http-server": "^0.8.5"
   }
