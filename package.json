@@ -4,7 +4,7 @@
   "description": "Junnyria Web App",
   "main": "app.js",
   "scripts": {
-    "prepublish": "bower install",
+    "start": "bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
