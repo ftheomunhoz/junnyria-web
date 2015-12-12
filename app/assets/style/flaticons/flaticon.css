@@ -17,6 +17,12 @@ margin-left: 20px;
 }.flaticon-padlock71:before {
 	content: "\e000";
 }
-.flaticon-user82:before {
+.flaticon-plus79:before {
 	content: "\e001";
+}
+.flaticon-send12:before {
+	content: "\e002";
+}
+.flaticon-user82:before {
+	content: "\e003";
 }

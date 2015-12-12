@@ -5,30 +5,139 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-8">
-                <img ng-src="vm.imgMestre" class="img-responsive img-mestre"/>
-            </div>
-
-            <div class="col-xs-10">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <span>Log de Atividades</span>
-                    </div>
-                    <div class="panel-body">
-                        <label>asdasd</label>
+            <div class="col-xs-16">
+                <div class="panel panel-primary">
+                    <div class="panel-body panel-image-master">
+                        <!--<img src="/assets/images/map.png" class="img-responsive img-master"/>-->
                     </div>
                 </div>
             </div>
 
-            <div class="col-xs-6">
-                <div class="panel panel-default">
+            <div class="col-xs-8">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <span>Dados</span>
+                        <h5><span>LOG DE ATIVIDADES</span></h5>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body panel-activities">
+                        <div class="item-activity" ng-repeat="e in ::vm.eventList">
+                            <em><span ng-bind="e.player"></span></em> - <label><span ng-bind="e.event"></span></label>
+                        </div>
+                    </div>
+                    <div class="panel-footer panel-footer-input">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Digite aqui sua mensagem"/>
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-fab btn-primary btn-fab-mini">
+                                        <span class="flaticon-send12"></span>
+                                    </button>
+                                  </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-24">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h5>
+                            <span>NOME DO JOGADOR - RAÇA</span>
+                            <span class="pointer flaticon-plus79 pull-right"></span>
+                        </h5>
+                    </div>
+                    <div class="panel-body panel-player">
                         <div class="row">
-                            <div class="col-xs-8">
-                                <button class="btn btn-primary">4</button>
+                            <div class="col-xs-3">
+                                <img class="img-responsive" ng-src="{{::vm.player.avatar}}"/>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="row">
+                                    <div class="col-xs-24">
+                                        <label class="control-label">TERRA NATAL</label>
+                                        <div>
+                                            <span>Mordor</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-24">
+                                        <label class="control-label">IDADE APARENTE</label>
+                                        <div>
+                                            <span>34</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-24">
+                                        <label class="control-label">DIVINDADE</label>
+                                        <div>
+                                            <span>Não</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="row">
+                                    <div class="col-xs-24">
+                                        <label class="control-label">CLASSE</label>
+                                        <div>
+                                            <span>CLASSE 1 > CLASSE 2 > CLASSE 3</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-24">
+                                        <label class="control-label">NÍVEL</label>
+                                        <div>
+                                            <span>12</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-24">
+                                        <label class="control-label">EXPERIÊNCIA</label>
+                                        <div>
+                                            <div class="bs-component">
+                                                <div class="progress progress-experience">
+                                                    <div class="progress-bar progress-bar-primary" style="width: 76%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-offset-3 col-xs-6">
+                                <div class="row">
+                                    <label class="control-label">DADOS</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block">4</a>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block">6</a>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block">8</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block">10</a>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block">12</a>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block">20</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
