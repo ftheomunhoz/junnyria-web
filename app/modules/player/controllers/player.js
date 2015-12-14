@@ -36,6 +36,8 @@
             large: '/assets/images/map.jpg',
             small: '/assets/images/medusa.png'
         };
+
+        //TODO: background move by directive
     }
 
     angular.module('junnyria.player').controller("playerController", playerController);
