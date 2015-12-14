@@ -17,7 +17,7 @@
 
         vm.player = {
             avatar: '/assets/images/wizard.png'
-        }
+        };
 
         vm.panelFocusList = [
             {
@@ -35,7 +35,7 @@
         vm.masterImage = {
             large: '/assets/images/map.jpg',
             small: '/assets/images/medusa.png'
-        }
+        };
     }
 
     angular.module('junnyria.player').controller("playerController", playerController);

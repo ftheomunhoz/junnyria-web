@@ -28,6 +28,7 @@
     "angular-ui-router": "~0.2.15",
     "roboto-fontface": "~0.4.3",
     "arrive": "~2.3.0",
-    "animate.css": "~3.4.0"
+    "animate.css": "~3.4.0",
+    "angular-draggable-bg": "~1.0.0-beta4"
   }
 }

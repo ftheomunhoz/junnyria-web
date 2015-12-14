@@ -8,6 +8,7 @@
     "use strict";
 
     angular.module('junnyria.player',[
-        'ui.router'
+        'ui.router',
+        'chieffancypants.draggableBg'
     ]);
 })();
