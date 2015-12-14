@@ -21,13 +21,21 @@
     <link href="bower_components/animate.css/animate.min.css" rel="stylesheet">
 
     <style>
-        .main-content {
-            margin-top: 60px;
-        }
-
         .panel-activities {
             height: 275px;
             overflow: auto;
+        }
+
+        .panel-attention {
+            height: 325px;
+            overflow: hidden;
+        }
+
+        .panel-body img {
+            max-height: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .item-activity {
@@ -42,8 +50,16 @@
             height: 50px;
         }
 
-        .btn-fab > .flaticon-send12 {
-            margin-left: -15px;
+        .btn-fab > span[class^="flaticon-"] {
+            margin-left: -18px;
+        }
+
+        .btn-icon {
+            padding-top: 5px !important;
+        }
+
+        .input-group-btn > .btn-fab {
+            margin-right: -10px !important;
         }
 
         .panel-player label:first-child {
@@ -64,13 +80,56 @@
         }
 
         .panel-image-master {
-            background-image: url('/assets/images/map.jpg');
             height: 380px;
             cursor: move;
+        }
+
+        .open > .panel-menu {
+            display: block;
+        }
+
+        .panel-menu {
+            position: absolute;
+            display: none;
+            right: 15px;
+            z-index: 1000;
+            margin-top: 45px;
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            list-style: none;
+            border-radius: 2px;
+            border: 0;
+            text-align: left;
+            -webkit-box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+            box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+            cursor: pointer;
+            width: 250px;
+        }
+
+        .panel-menu > li {
+            padding: 5px 0;
+        }
+
+        .panel-header-title {
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
+
+<div class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="javascript:void(0)">LOGO</a>
+        </div>
+    </div>
+</div>
 
 <div class="main-content">
     <div class="container-fluid">
