@@ -14,15 +14,27 @@
         font-size: 20px;
 font-style: normal;
 margin-left: 20px;
-}.flaticon-more10:before {
+}.flaticon-down126:before {
 	content: "\e000";
 }
-.flaticon-padlock71:before {
+.flaticon-left222:before {
 	content: "\e001";
 }
-.flaticon-send12:before {
+.flaticon-more10:before {
 	content: "\e002";
 }
-.flaticon-user82:before {
+.flaticon-padlock71:before {
 	content: "\e003";
+}
+.flaticon-right11:before {
+	content: "\e004";
+}
+.flaticon-send12:before {
+	content: "\e005";
+}
+.flaticon-up7:before {
+	content: "\e006";
+}
+.flaticon-user82:before {
+	content: "\e007";
 }

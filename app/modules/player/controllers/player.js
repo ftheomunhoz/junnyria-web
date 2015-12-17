@@ -19,25 +19,10 @@
             avatar: '/assets/images/wizard.png'
         };
 
-        vm.panelFocusList = [
-            {
-                id: "panelLog",
-                title: "LOG DE ATIVIDADES"
-            },
-            {
-                id: "panelAttention",
-                title: "PONTO DE ATENÇÃO"
-            }
-        ];
-
-        vm.panelFocus = vm.panelFocusList[0];
-
         vm.masterImage = {
             large: '/assets/images/map.jpg',
             small: '/assets/images/medusa.png'
         };
-
-        //TODO: background move by directive
     }
 
     angular.module('junnyria.player').controller("playerController", playerController);

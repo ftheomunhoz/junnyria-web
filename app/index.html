@@ -27,9 +27,28 @@
     <link href="bower_components/angular-draggable-bg/build/draggable-bg.min.css" rel="stylesheet">
 
     <style>
+        .navbar-fixed-top {
+            opacity: 0.7;
+        }
+
+        .main-content {
+            margin-top: 70px;
+        }
+
         .panel-activities {
-            height: 275px;
             overflow: auto;
+        }
+
+        @media (min-width: 1200px) {
+            .panel-image-master {
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 1999px) {
+            .panel-activities {
+                height: 275px;
+            }
         }
 
         .panel-attention {
@@ -72,10 +91,6 @@
             margin-top: 10px;
         }
 
-        .progress-experience {
-            margin-top: 10px;
-        }
-
         .btn-panel-header {
             margin: 0;
             padding: 0 10px;
@@ -86,8 +101,19 @@
         }
 
         .panel-image-master {
-            height: 380px;
             cursor: move;
+        }
+
+        @media (min-width: 1200px) {
+            .panel-image-master {
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 1999px) {
+            .panel-image-master {
+                height: 380px;
+            }
         }
 
         .open > .panel-menu {
@@ -120,11 +146,36 @@
         .panel-header-title {
             margin-top: 15px;
         }
+
+        .btn-navigation {
+            position: absolute !important;
+        }
+
+        .btn-navigation-left {
+            bottom: 25px;
+            left: 20px
+        }
+
+        .btn-navigation-right {
+            bottom: 25px;
+            right: 20px
+        }
+
+        .btn-navigation-down {
+            bottom: 75px;
+            right: 20px
+        }
+
+        .btn-navigation-up {
+            top: 5px;
+            right: 20px
+        }
+
     </style>
 </head>
 <body>
 
-<div class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -135,7 +186,12 @@
             <a class="navbar-brand" href="javascript:void(0)">LOGO</a>
         </div>
     </div>
-</div>
+</nav>
+
+<span class="visible-xs">XS</span>
+<span class="visible-sm">SM</span>
+<span class="visible-md">MD</span>
+<span class="visible-lg">LG</span>
 
 <div class="main-content">
     <div class="container-fluid">
@@ -170,6 +226,7 @@
 <script src="modules/common/services/login.js"></script>
 <script src="modules/common/factories/login.js"></script>
 <script src="modules/common/factories/activeUser.js"></script>
+<script src="modules/common/directives/background-navigation/background-navigation.js"></script>
 
 <script src="modules/player/player.module.js"></script>
 <script src="modules/player/player.config.js"></script>
