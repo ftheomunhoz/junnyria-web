@@ -77,14 +77,14 @@
                                 </h5>
                             </div>
                             <div class="col-xs-4">
+
                                 <a class="btn btn-fab btn-primary btn-fab-mini btn-icon pull-right"
                                    data-target="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <span class="flaticon-more10"></span>
                                 </a>
                                 <ul class="panel-menu">
-                                    <li>DADOS DO JOGADOR</li>
-                                    <li>ATRIBUTOS</li>
-                                    <li>INVENTÁRIO</li>
+                                    <li ng-click="vm.togglePanel(vm.panelList, $index)" ng-repeat="p in ::vm.panelList">
+                                        <span ng-bind="p.title"></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -95,185 +95,269 @@
                                 <img class="img-responsive" ng-src="{{::vm.player.avatar}}"/>
                             </div>
                             <! -- DADOS BÁSICOS -->
-                            <div class="col-lg-7 col-xs-24">
+                            <div class="col-lg-14 col-xs-24">
                                 <div class="row">
-                                    <div class="col-lg-24">
-                                        <label class="control-label">IDADE APARENTE</label>
-
-                                        <div>
-                                            <span>34</span>
-                                        </div>
+                                    <div class="col-xs-24">
+                                        <label class="control-label"><span class=""
+                                                                           ng-bind="vm.selectedTitle"></span></label>
                                     </div>
                                 </div>
-
                                 <div class="row">
-                                    <div class="col-lg-24">
-                                        <label class="control-label">DIVINDADE</label>
+                                    <!-- LEFT COLUMN -->
+                                    <div ng-if="vm.panelList[0].active" class="col-md-12 col-xs-24">
+                                        <div class="row">
+                                            <div class="col-lg-24">
+                                                <label class="control-label">IDADE APARENTE</label>
 
-                                        <div>
-                                            <span>Siberous</span>
+                                                <div>
+                                                    <span>34</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-lg-24">
-                                        <label class="control-label">NÍVEL</label>
+                                        <div class="row">
+                                            <div class="col-lg-24">
+                                                <label class="control-label">DIVINDADE</label>
 
-                                        <div>
-                                            <span>12</span>
+                                                <div>
+                                                    <span>Siberous</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-lg-18">
-                                        <label class="control-label">EXPERIÊNCIA</label>
+                                        <div class="row">
+                                            <div class="col-lg-24">
+                                                <label class="control-label">NÍVEL</label>
 
-                                        <div>
-                                            <div class="bs-component">
-                                                <div class="progress progress-experience">
-                                                    <div class="progress-bar progress-bar-primary"
-                                                         style="width: 76%;"></div>
+                                                <div>
+                                                    <span>12</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-18">
+                                                <label class="control-label">EXPERIÊNCIA</label>
+
+                                                <div>
+                                                    <div class="bs-component">
+                                                        <div class="progress progress-experience">
+                                                            <div class="progress-bar progress-bar-primary"
+                                                                 style="width: 76%;"></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-lg-18">
-                                        <label class="control-label">PONTOS DE VIDA (PV)</label>
+                                    <div ng-if="vm.panelList[1].active" class="col-md-12 col-xs-24">
+                                        <div class="row">
+                                            <div class="col-lg-18">
+                                                <label class="control-label">PONTOS DE VIDA (PV)</label>
 
-                                        <div>
-                                            <div class="bs-component">
-                                                <div class="progress progress-experience">
-                                                    <div class="progress-bar progress-bar-danger"
-                                                         style="width: 50%;"></div>
+                                                <div>
+                                                    <div class="bs-component">
+                                                        <div class="progress progress-experience">
+                                                            <div class="progress-bar progress-bar-danger"
+                                                                 style="width: 50%;"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-18">
+                                                <label class="control-label">PONTOS DE ÉTER (PE)</label>
+
+                                                <div>
+                                                    <div class="bs-component">
+                                                        <div class="progress progress-experience">
+                                                            <div class="progress-bar progress-bar-warning"
+                                                                 style="width: 90%;"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-24">
+                                                <label class="control-label">ATAQUE BÁSICO (AB)</label>
+
+                                                <div>
+                                                    <span>8</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-24">
+                                                <label class="control-label">CAPACIDADE DEFENSIVA (CD)</label>
+
+                                                <div>
+                                                    <span>6</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-lg-18">
-                                        <label class="control-label">PONTOS DE ÉTER (PE)</label>
+                                    <!-- RIGHT COLUMN -->
+                                    <div ng-if="vm.panelList[0].active" class="col-md-12 col-xs-24">
+                                        <div class="row">
+                                            <div class="col-lg-24">
+                                                <label class="control-label">TERRA NATAL</label>
 
-                                        <div>
-                                            <div class="bs-component">
-                                                <div class="progress progress-experience">
-                                                    <div class="progress-bar progress-bar-warning"
-                                                         style="width: 90%;"></div>
+                                                <div>
+                                                    <span>Mordor</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-24">
+                                                <label class="control-label">CLASSE 1</label>
+
+                                                <div>
+                                                    <span>Ladino</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-24">
+                                                <label class="control-label">CLASSE 2</label>
+
+                                                <div>
+                                                    <span>-</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-24">
+                                                <label class="control-label">CLASSE 3</label>
+
+                                                <div>
+                                                    <span>-</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-lg-24">
-                                        <label class="control-label">ATAQUE BÁSICO (AB)</label>
+                                    <div ng-if="vm.panelList[1].active" class="col-md-12 col-xs-24">
+                                        <div class="row">
+                                            <div class="col-xs-19">
+                                                <label class="control-label">INICIATIVA (IN)</label>
 
-                                        <div>
-                                            <span>8</span>
+                                                <div>
+                                                    <span>1D 8</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="input-group-btn rotate-180">
+                                                  <a class="btn btn-primary" type="button"><span
+                                                          class="flaticon-bomb18"></span></a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-19">
+                                                <label class="control-label">ACURÁCIA (AC)</label>
+
+                                                <div>
+                                                    <span>1D 10</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="input-group-btn rotate-180">
+                                                  <a class="btn btn-primary" type="button"><span
+                                                          class="flaticon-bomb18"></span></a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-19">
+                                                <label class="control-label">EVASÃO (EV)</label>
+
+                                                <div>
+                                                    <span>1D 6</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="input-group-btn rotate-180">
+                                                  <a class="btn btn-primary" type="button"><span
+                                                          class="flaticon-bomb18"></span></a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-19">
+                                                <label class="control-label">ATAQUE PADRÃO</label>
+
+                                                <div>
+                                                    <span>Golpe com Adaga (AB+1d8 [+1AC])</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <span class="input-group-btn rotate-180">
+                                                  <a class="btn btn-primary" type="button"><span
+                                                          class="flaticon-bomb18"></span></a>
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-lg-24">
-                                        <label class="control-label">CAPACIDADE DEFENSIVA (CD)</label>
+                                    <!-- CENTRALIZED -->
+                                    <div ng-if="vm.panelList[2].active" class="col-xs-24">
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <label class="control-label">COMUNICAÇÃO</label>
 
-                                        <div>
-                                            <span>6</span>
+                                                <div>
+                                                    <span>3</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <label class="control-label">CONSTITUIÇÃO</label>
+
+                                                <div>
+                                                    <span>3</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <label class="control-label">DESTREZA</label>
+
+                                                <div>
+                                                    <span>2</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <label class="control-label">INTELIGÊNCIA</label>
+
+                                                <div>
+                                                    <span>2</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <label class="control-label">PERCEPÇÃO</label>
+
+                                                <div>
+                                                    <span>2</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <label class="control-label">VONTADE</label>
+
+                                                <div>
+                                                    <span>1</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-lg-24">
-                                        <label class="control-label">NÍVEL</label>
-
-                                        <div>
-                                            <span>12</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-7 col-xs-24">
-                                <div class="row">
-                                    <div class="col-lg-24">
-                                        <label class="control-label">TERRA NATAL</label>
-
-                                        <div>
-                                            <span>Mordor</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-lg-24">
-                                        <label class="control-label">CLASSE 1</label>
-
-                                        <div>
-                                            <span>Ladino</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-24">
-                                        <label class="control-label">CLASSE 2</label>
-
-                                        <div>
-                                            <span>-</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-24">
-                                        <label class="control-label">CLASSE 3</label>
-
-                                        <div>
-                                            <span>-</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-lg-24">
-                                        <label class="control-label">INICIATIVA (IN)</label>
-
-                                        <div>
-                                            <span>1D 8</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-24">
-                                        <label class="control-label">ACURÁCIA (AC)</label>
-
-                                        <div>
-                                            <span>1D 10</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-24">
-                                        <label class="control-label">EVASÃO (EV)</label>
-
-                                        <div>
-                                            <span>1D 6</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-24">
-                                        <label class="control-label">ATAQUE PADRÃO</label>
-
-                                        <div>
-                                            <span>Golpe com Adaga (AB+1d8 [+1AC])</span>
+                                        <div class="row">
+                                            <div class="col-xs-24">
+                                                
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
