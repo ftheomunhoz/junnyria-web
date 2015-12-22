@@ -33,6 +33,15 @@
             },
             {
                 title: "HABILIDADES"
+            },
+            {
+                title: 'MAGIAS'
+            },
+            {
+                title: 'EQUIPAMENTOS'
+            },
+            {
+                title: "ITENS"
             }
         ];
 

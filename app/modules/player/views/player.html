@@ -54,7 +54,7 @@
                     <div class="panel-footer panel-footer-input">
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Digite aqui sua mensagem"/>
+                                <input type="text" class="form-control" placeholder="Digite aqui"/>
                                 <span class="input-group-btn">
                                     <a type="button" class="btn btn-fab btn-primary btn-fab-mini btn-icon">
                                         <span class="flaticon-send12"></span>
@@ -76,7 +76,7 @@
                                     <span>NOME DO JOGADOR - RAÇA</span>
                                 </h5>
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-xs-4 hidden-lg">
 
                                 <a class="btn btn-fab btn-primary btn-fab-mini btn-icon pull-right"
                                    data-target="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -92,16 +92,21 @@
                     <div class="panel-body panel-player">
                         <div class="row">
                             <div class="col-lg-3 col-xs-24">
-                                <img class="img-responsive" ng-src="{{::vm.player.avatar}}"/>
+                                <img class="img-avatar img-responsive" ng-src="{{::vm.player.avatar}}"/>
                             </div>
-                            <div class="col-lg-4">
-                                MEUN
+                            <div class="col-lg-4 visible-lg">
+                                <ul class="vertical-menu">
+                                    <li ng-click="vm.togglePanel(vm.panelList, $index)" ng-repeat="p in ::vm.panelList"
+                                        ng-class="{'active': p.title === vm.selectedTitle}">
+                                        <label class="control-label"><span ng-bind="p.title"></span></label>
+                                    </li>
+                                </ul>
                             </div>
                             <! -- DADOS BÁSICOS -->
                             <div class="col-lg-14 col-xs-24">
                                 <div class="row">
                                     <div class="col-xs-24">
-                                        <label class="control-label"><span class=""
+                                        <label class="control-label"><span class="card-title"
                                                                            ng-bind="vm.selectedTitle"></span></label>
                                     </div>
                                 </div>
@@ -313,42 +318,42 @@
                                     <!-- CENTRALIZED -->
                                     <div ng-if="vm.panelList[2].active" class="col-xs-24">
                                         <div class="row">
-                                            <div class="col-xs-4">
+                                            <div class="col-xs-24 col-lg-4">
                                                 <label class="control-label">COMUNICAÇÃO</label>
 
                                                 <div>
                                                     <span>3</span>
                                                 </div>
                                             </div>
-                                            <div class="col-xs-4">
+                                            <div class="col-xs-24 col-lg-4">
                                                 <label class="control-label">CONSTITUIÇÃO</label>
 
                                                 <div>
                                                     <span>3</span>
                                                 </div>
                                             </div>
-                                            <div class="col-xs-4">
+                                            <div class="col-xs-24 col-lg-4">
                                                 <label class="control-label">DESTREZA</label>
 
                                                 <div>
                                                     <span>2</span>
                                                 </div>
                                             </div>
-                                            <div class="col-xs-4">
+                                            <div class="col-xs-24 col-lg-4">
                                                 <label class="control-label">INTELIGÊNCIA</label>
 
                                                 <div>
                                                     <span>2</span>
                                                 </div>
                                             </div>
-                                            <div class="col-xs-4">
+                                            <div class="col-xs-24 col-lg-4">
                                                 <label class="control-label">PERCEPÇÃO</label>
 
                                                 <div>
                                                     <span>2</span>
                                                 </div>
                                             </div>
-                                            <div class="col-xs-4">
+                                            <div class="col-xs-24 col-lg-4">
                                                 <label class="control-label">VONTADE</label>
 
                                                 <div>
@@ -367,37 +372,36 @@
                             </div>
 
 
-                            <div class="col-lg-3 col-xs-24">
+                            <div class="col-lg-3 col-xs-12 col-sm-6">
                                 <div class="row">
                                     <div class="col-xs-24">
-                                        <label class="control-label">DADOS</label>
+                                        <br class="hidden-lg"/>
+                                        <label class="control-label"><span class="card-title">DADOS</span></label>
+                                        <div class="togglebutton pull-right">
+                                            <label>
+                                                <input type="checkbox" checked>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-24">
-                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block">1d
-                                            4</a>
+                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block btn-dice">1d4</a>
                                     </div>
                                     <div class="col-xs-24">
-                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block">1d
-                                            6</a>
+                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block btn-dice">1d6</a>
                                     </div>
                                     <div class="col-xs-24">
-                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block">1d
-                                            8</a>
-                                    </div>
-
-                                    <div class="col-xs-24">
-                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block">1d
-                                            10</a>
+                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block btn-dice">1d8</a>
                                     </div>
                                     <div class="col-xs-24">
-                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block">1d
-                                            12</a>
+                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block btn-dice">1d10</a>
                                     </div>
                                     <div class="col-xs-24">
-                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block">1d
-                                            20</a>
+                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block btn-dice">1d12</a>
+                                    </div>
+                                    <div class="col-xs-24">
+                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block btn-dice">1d20</a>
                                     </div>
                                 </div>
                             </div>
