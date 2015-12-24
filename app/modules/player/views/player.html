@@ -150,7 +150,7 @@
                                                 <div>
                                                     <div class="bs-component">
                                                         <div class="progress progress-experience">
-                                                            <div class="progress-bar progress-bar-primary"
+                                                            <div class="progress-bar progress-bar-experience"
                                                                  style="width: 76%;"></div>
                                                         </div>
                                                     </div>
@@ -167,7 +167,7 @@
                                                 <div>
                                                     <div class="bs-component">
                                                         <div class="progress progress-experience">
-                                                            <div class="progress-bar progress-bar-danger"
+                                                            <div class="progress-bar progress-bar-health"
                                                                  style="width: 50%;"></div>
                                                         </div>
                                                     </div>
@@ -182,7 +182,7 @@
                                                 <div>
                                                     <div class="bs-component">
                                                         <div class="progress progress-experience">
-                                                            <div class="progress-bar progress-bar-warning"
+                                                            <div class="progress-bar progress-bar-mana"
                                                                  style="width: 90%;"></div>
                                                         </div>
                                                     </div>
@@ -263,8 +263,10 @@
                                             </div>
                                             <div class="col-lg-5 col-xs-8 col-sm-8">
                                                 <span class="input-group-btn rotate-180">
-                                                  <a class="btn btn-primary" type="button"><span
-                                                          class="flaticon-bomb18"></span></a>
+                                                    <a type="button"
+                                                       class="btn btn-fab btn-primary btn-fab-mini btn-icon btn-action">
+                                                        <span class="flaticon-bomb18"></span>
+                                                    </a>
                                                 </span>
                                             </div>
                                         </div>
@@ -278,8 +280,10 @@
                                             </div>
                                             <div class="col-lg-5 col-xs-8 col-sm-8">
                                                 <span class="input-group-btn rotate-180">
-                                                  <a class="btn btn-primary" type="button"><span
-                                                          class="flaticon-bomb18"></span></a>
+                                                  <a type="button"
+                                                     class="btn btn-fab btn-primary btn-fab-mini btn-icon btn-action">
+                                                      <span class="flaticon-bomb18"></span>
+                                                  </a>
                                                 </span>
                                             </div>
                                         </div>
@@ -293,8 +297,10 @@
                                             </div>
                                             <div class="col-lg-5 col-xs-8 col-sm-8">
                                                 <span class="input-group-btn rotate-180">
-                                                  <a class="btn btn-primary" type="button"><span
-                                                          class="flaticon-bomb18"></span></a>
+                                                  <a type="button"
+                                                     class="btn btn-fab btn-primary btn-fab-mini btn-icon btn-action">
+                                                      <span class="flaticon-bomb18"></span>
+                                                  </a>
                                                 </span>
                                             </div>
                                         </div>
@@ -308,8 +314,10 @@
                                             </div>
                                             <div class="col-lg-5 col-xs-8 col-sm-8">
                                                 <span class="input-group-btn rotate-180">
-                                                  <a class="btn btn-primary" type="button"><span
-                                                          class="flaticon-bomb18"></span></a>
+                                                  <a type="button"
+                                                     class="btn btn-fab btn-primary btn-fab-mini btn-icon btn-action">
+                                                      <span class="flaticon-bomb18"></span>
+                                                  </a>
                                                 </span>
                                             </div>
                                         </div>
@@ -364,7 +372,22 @@
 
                                         <div class="row">
                                             <div class="col-xs-24">
-
+                                                <label class="control-label">HABILIDADES</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-24">
+                                                <ul class="ability-list">
+                                                    <li ng-repeat="h in vm.abilityList">
+                                                        <div>
+                                                            <label class="control-label">
+                                                                <span ng-bind="h.name"></span>
+                                                                [cx. <span ng-bind="h.cost"></span>]
+                                                            </label>
+                                                        </div>
+                                                        <span ng-bind="h.description"></span>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -377,31 +400,32 @@
                                     <div class="col-xs-24">
                                         <br class="hidden-lg"/>
                                         <label class="control-label"><span class="card-title">DADOS</span></label>
-                                        <div class="togglebutton pull-right">
-                                            <label>
-                                                <input type="checkbox" checked>
-                                            </label>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-24">
-                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block btn-dice">1d4</a>
+                                        <a href="javascript:void(0)"
+                                           class="btn btn-raised btn-primary btn-block btn-dice">1d4</a>
                                     </div>
                                     <div class="col-xs-24">
-                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block btn-dice">1d6</a>
+                                        <a href="javascript:void(0)"
+                                           class="btn btn-raised btn-primary btn-block btn-dice">1d6</a>
                                     </div>
                                     <div class="col-xs-24">
-                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block btn-dice">1d8</a>
+                                        <a href="javascript:void(0)"
+                                           class="btn btn-raised btn-primary btn-block btn-dice">1d8</a>
                                     </div>
                                     <div class="col-xs-24">
-                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block btn-dice">1d10</a>
+                                        <a href="javascript:void(0)"
+                                           class="btn btn-raised btn-primary btn-block btn-dice">1d10</a>
                                     </div>
                                     <div class="col-xs-24">
-                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block btn-dice">1d12</a>
+                                        <a href="javascript:void(0)"
+                                           class="btn btn-raised btn-primary btn-block btn-dice">1d12</a>
                                     </div>
                                     <div class="col-xs-24">
-                                        <a href="javascript:void(0)" class="btn btn-raised btn-primary btn-block btn-dice">1d20</a>
+                                        <a href="javascript:void(0)"
+                                           class="btn btn-raised btn-primary btn-block btn-dice">1d20</a>
                                     </div>
                                 </div>
                             </div>

@@ -27,8 +27,80 @@
     <link href="bower_components/angular-draggable-bg/build/draggable-bg.min.css" rel="stylesheet">
 
     <style>
+        /* Override Material Bootstrap */
+        span {
+            color: #8b8b8b;
+            font-size: 14px;
+        }
+
+        label.control-label, label.control-label>span {
+            color: #636363;
+        }
+
+        .panel-header-title > span, .navbar {
+            color: #636363 !important;
+        }
+
+        .panel.panel-primary>.panel-heading {
+            background-color: #F1DB6F;
+        }
+
+        .navbar, .navbar.navbar-default {
+            background-color: #F1DB6F;
+        }
+
+        .btn-primary {
+            background-color: #F1DB6F !important;
+        }
+
+        .btn-primary.btn-icon {
+            background-color: #B5B682 !important;
+        }
+
+        .btn-primary, .btn-primary > span {
+            color: #636363 !important;
+        }
+
+        .form-control, .form-group .form-control {
+            border: 0;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#F1DB6F),to(#F1DB6F)),-webkit-gradient(linear,left top,left bottom,from(#D2D2D2),to(#D2D2D2)) !important;
+            background-image: -webkit-linear-gradient(#F1DB6F,#F1DB6F),-webkit-linear-gradient(#D2D2D2,#D2D2D2) !important;;
+            background-image: -o-linear-gradient(#F1DB6F,#F1DB6F),-o-linear-gradient(#D2D2D2,#D2D2D2) !important;;
+            background-image: linear-gradient(#F1DB6F,#F1DB6F),linear-gradient(#D2D2D2,#D2D2D2) !important;;
+        }
+
+        .form-group.is-focused label, .form-group.is-focused label.control-label {
+            color: #F1DB6F;
+        }
+
+        body, .panel-footer {
+            background-color: #FEFEFE;
+        }
+
+        /* APP */
+        .btn-action {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+
+        .progress .progress-bar.progress-bar-experience {
+            background-color: #F1DB6F;
+        }
+
+        .progress .progress-bar.progress-bar-health {
+            background-color: #00f14a;
+        }
+
+        .progress .progress-bar.progress-bar-health-danger {
+            background-color: #f10027;
+        }
+
+        .progress .progress-bar.progress-bar-mana {
+            background-color: #001af1;
+        }
+
         .navbar-fixed-top {
-            opacity: 0.7;
+            opacity: 0.8;
         }
 
         .main-content {
@@ -102,6 +174,7 @@
 
         .panel-image-master {
             cursor: move;
+            border-radius: 5px;
         }
 
         @media (min-width: 1200px) {
@@ -112,7 +185,7 @@
 
         @media (max-width: 1999px) {
             .panel-image-master {
-                height: 380px;
+                height: 385px;
             }
         }
 
@@ -198,16 +271,12 @@
             font-size: 18px;
         }
 
-        .control-label+.togglebutton {
-            margin-top: 2px;
-        }
-
         .vertical-menu {
             list-style: none;
             border-top: none;
             border-right: none;
             border-bottom: transparent;
-            border-left: 5px solid #009688;
+            border-left: 5px solid #F1DB6F;
             padding-left: 0;
         }
 
@@ -215,20 +284,23 @@
             margin: 10px 0;
             padding-left: 20px;
         }
-        
-        .vertical-menu > li > label {
-            font-size: 12px;
+
+        .vertical-menu > li > label > span {
+            font-size: 13px;
             cursor: pointer;
 
-            -webkit-transition: font 0.3s ease;
-            -moz-transition: font 0.3s ease;
-            -o-transition: font 0.3s ease;
-            -ms-transition: font 0.3s ease;
+            -webkit-transition: font 0.2s cubic-bezier(.4,0,1,1);
+            -moz-transition: font 0.2s cubic-bezier(.4,0,1,1);
+            -o-transition: font 0.2s cubic-bezier(.4,0,1,1);
+            -ms-transition: font 0.2s cubic-bezier(.4,0,1,1);
         }
 
-        .vertical-menu > li:not(.active) > label {
+        .vertical-menu > li.active > label > span {
+            color: #F1DB6F !important;
+        }
+
+        .vertical-menu > li:not(.active) > label > span {
             font-size: 15px;
-            color: #009688;
         }
 
         .vertical-menu > li > label:first-child {
@@ -244,7 +316,13 @@
         }
 
         .img-avatar {
-            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        .ability-list {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 10px;
         }
     </style>
 </head>

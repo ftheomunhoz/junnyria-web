@@ -57,6 +57,29 @@
         };
 
         vm.togglePanel(vm.panelList, 0);
+
+        vm.abilityList = [
+            {
+                name: "Sagacidade",
+                cost: 0,
+                description: "Talento de ladino; Concede um bônus de +2 em testes de Destreza."
+            },
+            {
+                name: "Intimidação",
+                cost: 2,
+                description: "Concede um bônus de +3 em testes de intimidar e interrogar."
+            },
+            {
+                name: "Furtividade",
+                cost: 2,
+                description: "Concede um bônus de +3 em testes de Fuga e Furtividade."
+            },
+            {
+                name: "Reflexos",
+                cost: 2,
+                description: "Concede um bônus de +1 em testes de Evasão."
+            }
+        ];
     }
 
     angular.module('junnyria.player').controller("playerController", playerController);
