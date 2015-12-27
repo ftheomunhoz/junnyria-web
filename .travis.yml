@@ -38,15 +38,11 @@ install:
   # Install npm dependencies and ensure that npm cache is not stale
   - npm install
 
-#before_script:
-#  - ./scripts/travis/before_build.sh
-
 #script:
 #  - ./scripts/travis/build.sh
 
-#after_script:
-#  - ./scripts/travis/tear_down_browser_provider.sh
-#  - ./scripts/travis/print_logs.sh
+after_script:
+  - bower install
 
 deploy:
   provider: heroku
@@ -54,6 +50,7 @@ deploy:
     secure: HEROKU-KEY
 
 notifications:
+  email: false
   webhooks:
     urls:
       - https://webhooks.gitter.im/e/b2a1fdd21cfa14250e88
