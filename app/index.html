@@ -54,7 +54,11 @@
         }
 
         .btn-primary.btn-icon {
-            background-color: #B5B682 !important;
+            background-color: #1C3144 !important;
+        }
+
+        .btn-primary.btn-icon > span {
+            color: #FFF !important;
         }
 
         .btn-primary, .btn-primary > span {
@@ -81,6 +85,10 @@
         .btn-action {
             background-color: transparent !important;
             box-shadow: none !important;
+        }
+
+        .btn-action-container {
+            padding-top: 10px;
         }
 
         .progress .progress-bar.progress-bar-experience {
@@ -128,11 +136,32 @@
             overflow: hidden;
         }
 
+        .panel-attention .btn-icon {
+            margin-top: 120px;
+        }
+
+        .attention-img {
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 280px;
+            background-size: contain;
+            text-align: center;
+        }
+
+        .attention-img > label {
+            font-weight: bold;
+            color: #BACBA9;
+        }
+
         .panel-body img {
             max-height: 100%;
             display: block;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .panel-attention .bs-component {
+            margin-top: 13px;
         }
 
         .item-activity {
@@ -148,7 +177,7 @@
         }
 
         .btn-fab > span[class^="flaticon-"], .btn > span[class^="flaticon-"] {
-            margin-left: -18px;
+            margin-left: -20px;
         }
 
         .btn-icon {
@@ -174,7 +203,7 @@
 
         .panel-image-master {
             cursor: move;
-            border-radius: 5px;
+            border-radius: 2px;
         }
 
         @media (min-width: 1200px) {
@@ -265,6 +294,8 @@
         .btn-dice {
             text-transform: none;
             margin-bottom: 0;
+            background-color: #1C3144 !important;
+            color: #FFF !important;
         }
 
         .card-title {
@@ -296,7 +327,7 @@
         }
 
         .vertical-menu > li.active > label > span {
-            color: #F1DB6F !important;
+            color: #BACBA9 !important;
         }
 
         .vertical-menu > li:not(.active) > label > span {

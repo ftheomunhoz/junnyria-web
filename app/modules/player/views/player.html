@@ -25,7 +25,37 @@
 
                     <!-- PANEL ATTENTION -->
                     <div class="panel-body panel-attention">
-                        <img class="img-responsive" ng-src="{{vm.masterImage.small}}"/>
+                        <div class="row">
+                            <div class="col-xs-4 pointer" ng-click="vm.moveAttentionLeft()">
+                                <a class="btn btn-fab btn-primary btn-fab-mini btn-icon pull-right"
+                                   ng-if="vm.attentionIndex !== 0">
+                                    <span class="flaticon-left222"></span>
+                                </a>
+                            </div>
+                            <div class="col-xs-16">
+                                <div class="attention-img"
+                                     ng-style="{'background-image': 'url('+vm.masterImage.small[vm.attentionIndex].src+')'}">
+                                    <label ng-bind="vm.masterImage.small[vm.attentionIndex].name"></label>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 pointer" ng-click="vm.moveAttentionRight()">
+                                <a class="btn btn-fab btn-primary btn-fab-mini btn-icon pull-left"
+                                   ng-if="vm.attentionIndex !== vm.masterImage.small.length -1">
+                                    <span class="flaticon-right11"></span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-24">
+                                <div class="bs-component">
+                                    <div class="progress progress-experience">
+                                        <div class="progress-bar progress-bar-health"
+                                             style="width: 50%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -261,7 +291,7 @@
                                                     <span>1D 8</span>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-5 col-xs-8 col-sm-8">
+                                            <div class="col-lg-5 col-xs-8 col-sm-8 btn-action-container">
                                                 <span class="input-group-btn rotate-180">
                                                     <a type="button"
                                                        class="btn btn-fab btn-primary btn-fab-mini btn-icon btn-action">
@@ -278,7 +308,7 @@
                                                     <span>1D 10</span>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-5 col-xs-8 col-sm-8">
+                                            <div class="col-lg-5 col-xs-8 col-sm-8 btn-action-container">
                                                 <span class="input-group-btn rotate-180">
                                                   <a type="button"
                                                      class="btn btn-fab btn-primary btn-fab-mini btn-icon btn-action">
@@ -295,7 +325,7 @@
                                                     <span>1D 6</span>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-5 col-xs-8 col-sm-8">
+                                            <div class="col-lg-5 col-xs-8 col-sm-8 btn-action-container">
                                                 <span class="input-group-btn rotate-180">
                                                   <a type="button"
                                                      class="btn btn-fab btn-primary btn-fab-mini btn-icon btn-action">
@@ -312,7 +342,7 @@
                                                     <span>Golpe com Adaga (AB+1d8 [+1AC])</span>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-5 col-xs-8 col-sm-8">
+                                            <div class="col-lg-5 col-xs-8 col-sm-8  btn-action-container">
                                                 <span class="input-group-btn rotate-180">
                                                   <a type="button"
                                                      class="btn btn-fab btn-primary btn-fab-mini btn-icon btn-action">

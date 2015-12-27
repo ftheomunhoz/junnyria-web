@@ -21,7 +21,26 @@
 
         vm.masterImage = {
             large: '/assets/images/map.jpg',
-            small: '/assets/images/medusa.png'
+            small: [
+                {
+                    src:'/assets/images/medusa.png',
+                    name: 'Medusa'
+                },
+                {
+                    src:'/assets/images/Dragon.jpg',
+                    name: 'Dragon'
+                }
+            ]
+        };
+
+        vm.attentionIndex = 0;
+
+        vm.moveAttentionLeft = function() {
+            vm.attentionIndex = vm.attentionIndex <= 1 ? 0 : vm.attentionIndex - 1;
+        };
+
+        vm.moveAttentionRight = function() {
+            vm.attentionIndex = vm.attentionIndex >= vm.masterImage.small.length -1 ? vm.masterImage.small.length -1 : vm.attentionIndex + 1;
         };
 
         vm.panelList = [
