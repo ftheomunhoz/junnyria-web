@@ -36,10 +36,14 @@ install:
   - npm config set loglevel http
   #- npm install -g npm@2.5
   # Install npm dependencies and ensure that npm cache is not stale
-  - npm install
+  - npm i
 
-#script:
-#  - ./scripts/travis/build.sh
+before_script:
+  - npm i -g grunt-cli
+
+script:
+  - grunt build
+  - grunt test
 
 after_script:
   - bower install
