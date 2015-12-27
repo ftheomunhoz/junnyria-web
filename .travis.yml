@@ -37,6 +37,7 @@ install:
 
 deploy:
   provider: heroku
+  skip_cleanup: true
   api_key:
     secure: $HEROKU
 

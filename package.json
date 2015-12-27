@@ -4,7 +4,7 @@
   "description": "Junnyria Web App",
   "main": "app.js",
   "scripts": {
-    "preinstall": "npm i -g grunt-cli",
+    "preinstall": "npm i grunt-cli --save-dev",
     "install": "grunt build",
     "postinstall": "bower install",
     "test": "grunt test"
