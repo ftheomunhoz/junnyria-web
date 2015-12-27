@@ -5,15 +5,13 @@
  *
  */
 
-(function(){
+(function () {
     "use strict";
 
-    function playerController(){
+    function playerController() {
         var vm = this;
 
-        vm.eventList = [
-
-        ];
+        vm.eventList = [];
 
         vm.player = {
             avatar: '/assets/images/wizard.png'
@@ -23,11 +21,11 @@
             large: '/assets/images/map.jpg',
             small: [
                 {
-                    src:'/assets/images/medusa.png',
+                    src: '/assets/images/medusa.png',
                     name: 'Medusa'
                 },
                 {
-                    src:'/assets/images/Dragon.jpg',
+                    src: '/assets/images/Dragon.jpg',
                     name: 'Dragon'
                 }
             ]
@@ -35,12 +33,12 @@
 
         vm.attentionIndex = 0;
 
-        vm.moveAttentionLeft = function() {
+        vm.moveAttentionLeft = function () {
             vm.attentionIndex = vm.attentionIndex <= 1 ? 0 : vm.attentionIndex - 1;
         };
 
-        vm.moveAttentionRight = function() {
-            vm.attentionIndex = vm.attentionIndex >= vm.masterImage.small.length -1 ? vm.masterImage.small.length -1 : vm.attentionIndex + 1;
+        vm.moveAttentionRight = function () {
+            vm.attentionIndex = vm.attentionIndex >= vm.masterImage.small.length - 1 ? vm.masterImage.small.length - 1 : vm.attentionIndex + 1;
         };
 
         vm.panelList = [
@@ -66,8 +64,8 @@
 
         vm.selectedTitle = "";
 
-        vm.togglePanel = function(list, index) {
-            for (var i=0 ; i<list.length ; i++) {
+        vm.togglePanel = function (list, index) {
+            for (var i = 0; i < list.length; i++) {
                 list[i].active = false;
             }
 
@@ -97,6 +95,52 @@
                 name: "Reflexos",
                 cost: 2,
                 description: "Concede um bônus de +1 em testes de Evasão."
+            }
+        ];
+
+        vm.magicList = [
+            {
+                name: "Estaca Hemática",
+                type: "Trevas",
+                description: "Mágica de dano; 1d20 + 1d10 perfurante"
+            },
+            {
+                name: "Invisibilidade",
+                type: "Trevas",
+                description: "Considera que todos à sua volta estão Cegos"
+            },
+            {
+                name: "Teletransporte Simples",
+                type: "Água",
+                description: "Transporta o conjurador a um local a vista"
+            }
+        ];
+
+        vm.magicTypeList = [
+            {
+                id: 'darkness',
+                type: "Trevas",
+                count: 2,
+                percent: 20
+            },
+            {
+                id: 'water',
+                type: "Água",
+                count: 1,
+                percent: 10
+            }
+        ];
+
+        vm.equipmentList = [
+            {
+                name: "Mala de Ferramentas",
+                value: 0,
+                description: "Equipamento dos nascidos em Teka; Concede um bônus de +2 em testes de Desarmar Armadilhas"
+            },
+            {
+                name: "Amuleto de Siberious",
+                value: 0,
+                description: "Equipamento dos devotos de Siberious; Concede um bônus de +2 em testes de Operar Mecanismos"
             }
         ];
     }
