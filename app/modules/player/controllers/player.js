@@ -13,6 +13,8 @@
 
         vm.eventList = [];
 
+
+
         vm.player = {
             avatar: '/assets/images/wizard.png'
         };

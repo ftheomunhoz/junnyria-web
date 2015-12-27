@@ -17,27 +17,33 @@ margin-left: 20px;
 }.flaticon-bomb18:before {
 	content: "\e000";
 }
-.flaticon-down126:before {
+.flaticon-camera21:before {
 	content: "\e001";
 }
-.flaticon-left222:before {
+.flaticon-down126:before {
 	content: "\e002";
 }
-.flaticon-more10:before {
+.flaticon-left222:before {
 	content: "\e003";
 }
-.flaticon-padlock71:before {
+.flaticon-more10:before {
 	content: "\e004";
 }
-.flaticon-right11:before {
+.flaticon-padlock71:before {
 	content: "\e005";
 }
-.flaticon-send12:before {
+.flaticon-right11:before {
 	content: "\e006";
 }
-.flaticon-up7:before {
+.flaticon-send12:before {
 	content: "\e007";
 }
-.flaticon-user82:before {
+.flaticon-up7:before {
 	content: "\e008";
+}
+.flaticon-user82:before {
+	content: "\e009";
+}
+.flaticon-worldgrid:before {
+	content: "\e00a";
 }

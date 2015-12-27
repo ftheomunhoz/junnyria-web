@@ -191,6 +191,7 @@
 
         .btn-icon {
             padding-top: 5px !important;
+            z-index: 100;
         }
 
         .input-group-btn > .btn-fab {
@@ -210,19 +211,26 @@
             cursor: pointer;
         }
 
+        .panel-image-master video {
+            border-radius: 2px;
+            width: 100%;
+            margin-top: -15px;
+            cursor: default;
+        }
+
         .panel-image-master {
             cursor: move;
             border-radius: 2px;
         }
 
         @media (min-width: 1200px) {
-            .panel-image-master {
+            .panel-image-master, .panel-image-master video {
                 height: 500px;
             }
         }
 
         @media (max-width: 1999px) {
-            .panel-image-master {
+            .panel-image-master, .panel-image-master video {
                 height: 385px;
             }
         }
@@ -274,10 +282,15 @@
 
         .btn-navigation-down {
             bottom: 75px;
-            right: 20px
+            left: 20px
         }
 
         .btn-navigation-up {
+            top: 5px;
+            left: 20px
+        }
+
+        .btn-navigation-menu {
             top: 5px;
             right: 20px
         }
@@ -410,6 +423,11 @@
 <!-- Angular Draggable BD Directive -->
 <script src="bower_components/angular-draggable-bg/build/draggable-bg.min.js"></script>
 
+<!-- Stream -->
+<script src="bower_components/socket.io-client/socket.io.js"></script>
+<script src="bower_components/eventEmitter/EventEmitter.min.js"></script>
+<script src="assets/scripts/webrtc-adapters.js"></script>
+
 <!-- App -->
 <script src="junnyria.js"></script>
 <script src="modules/common/common.module.js"></script>
@@ -421,6 +439,14 @@
 <script src="modules/common/factories/activeUser.js"></script>
 <script src="modules/common/directives/background-navigation/background-navigation.js"></script>
 <script src="modules/common/directives/anchor-submit/anchor-submit.js"></script>
+<script src="modules/common/directives/image-master/image-master.js"></script>
+
+<script src="modules/stream/stream-video-player.module.js"></script>
+<script src="modules/stream/stream-video-player.config.js"></script>
+<script src="modules/stream/services/stream-service.js"></script>
+<script src="modules/stream/services/room-service.js"></script>
+<script src="modules/stream/directives/stream-video-player/stream-video-player.js"></script>
+<script src="modules/stream/directives/stream-room/stream-room.js"></script>
 
 <script src="modules/player/player.module.js"></script>
 <script src="modules/player/player.config.js"></script>

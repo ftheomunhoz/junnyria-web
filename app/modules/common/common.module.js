@@ -8,6 +8,7 @@
     "use strict";
 
     angular.module('junnyria.common',[
-        'ui.router'
+        'ui.router',
+        'junnyria.stream'
     ]);
 })();
