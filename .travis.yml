@@ -50,8 +50,7 @@ after_script:
 
 deploy:
   provider: heroku
-  api_key:
-    secure: HEROKU-KEY
+  api_key: $HEROKU-KEY
 
 notifications:
   email: false
