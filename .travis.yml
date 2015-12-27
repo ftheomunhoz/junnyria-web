@@ -48,6 +48,11 @@ install:
 #  - ./scripts/travis/tear_down_browser_provider.sh
 #  - ./scripts/travis/print_logs.sh
 
+deploy:
+  provider: heroku
+  api_key:
+    secure: HEROKU-KEY
+
 notifications:
   webhooks:
     urls:
