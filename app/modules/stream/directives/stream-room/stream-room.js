@@ -8,11 +8,10 @@
 (function () {
     "use strict";
 
-    var streamRoom = function(roomService, $timeout) {
-        function controller($sce, streamService, appSettings) {
+    var streamRoom = function(streamService, roomService, $timeout) {
+        function controller($sce, appSettings) {
 
             if (!window.RTCPeerConnection || !navigator.getUserMedia) {
-                alert('a');
                 console.error('WebRTC is not supported by your browser. You can try the app with Chrome and Firefox.');
                 return;
             }
@@ -31,7 +30,6 @@
 
                     roomService.joinRoom(appSettings.masterRoom);
                 }, function () {
-                    alert('b');
                     console.error('No audio/video permissions. Please refresh your browser and allow the audio/video capturing.');
                 });
 
@@ -70,7 +68,8 @@
             });
 
             var destroy = scope.$on('$destroy', function() {
-
+                roomService.leaveRoom();
+                streamService.leave();
                 destroy();
             });
         }

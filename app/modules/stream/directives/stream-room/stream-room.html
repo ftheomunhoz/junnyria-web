@@ -1,5 +1,8 @@
 <div>
-    <video-player ng-repeat="peer in vm.peers" vid-src="{{peer.stream}}"></video-player>
+    <label class="control-label" ng-if="vm.peers.length === 0">
+        Não existe transmissão neste momento.
+    </label>
+    <video-player vid-src="{{vm.peers[0].stream}}"></video-player>
 
     <video ng-if="vm.showSelf" ng-src="{{vm.getLocalVideo()}}" autoplay muted></video>
 </div>

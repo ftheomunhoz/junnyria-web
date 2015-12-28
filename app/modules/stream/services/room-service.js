@@ -21,8 +21,6 @@
             socket = io.connect(appSettings.streamEndpoint),
             connected = false;
 
-        alert(appSettings.streamEndpoint);
-
         function addHandlers(socket) {
             socket.on('peer.connected', function (params) {
                 makeOffer(params.id);
@@ -60,7 +58,6 @@
                     pc.setLocalDescription(sdp);
                     socket.emit('msg', {by: currentId, to: id, sdp: sdp, type: 'sdp-offer'});
                 }, function (e) {
-                    alert(1);
                     console.error(e);
                 },
                 {mandatory: {offerToReceiveVideo: true, offerToReceiveAudio: true}});
@@ -75,18 +72,15 @@
                             pc.setLocalDescription(sdp);
                             socket.emit('msg', {by: currentId, to: data.by, sdp: sdp, type: 'sdp-answer'});
                         }, function (e) {
-                            alert(2);
                             console.error(e);
                         });
                     }, function (e) {
-                        alert(3);
                         console.error(e);
                     });
                     break;
                 case 'sdp-answer':
                     pc.setRemoteDescription(new RTCSessionDescription(data.sdp), function () {
                     }, function (e) {
-                        alert(4);
                         console.error(e);
                     });
                     break;
@@ -106,6 +100,11 @@
                         roomId = roomid;
                     });
                     connected = true;
+                }
+            },
+            leaveRoom: function() {
+                for (var p in peerConnections) {
+                    peerConnections[p].close();
                 }
             },
             createRoom: function () {

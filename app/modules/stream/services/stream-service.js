@@ -9,6 +9,8 @@
     "use strict";
     function streamService($q) {
         var stream;
+        var tracks = [];
+
         return {
             get: function (isMaster) {
                 if (stream) {
@@ -20,15 +22,21 @@
                         audio: true
                     }, function (s) {
                         stream = s;
+                        tracks = stream.getTracks();
+
                         d.resolve(stream);
                     }, function (e) {
-                        for (var att in e) {
-                            alert('att - '+e[att]);
-                        }
                         d.reject(e);
                     });
                     return d.promise;
                 }
+            },
+            leave: function() {
+                for (var i= 0, len=tracks.length ; i<len ; i++) {
+                    tracks[i].stop();
+                }
+
+                stream = undefined;
             }
         };
     }
