@@ -5,25 +5,29 @@
  *
  */
 
+(function(){
+    "use strict";
+    function videoPlayer($sce) {
+        function controller () {
+            var vm = this;
 
-'use strict';
+            vm.trustSrc = function () {
+                return vm.vidSrc ? $sce.trustAsResourceUrl(vm.vidSrc): undefined;
+            };
+        }
 
-angular.module('junnyria.stream')
-    .directive('videoPlayer', function ($sce) {
         return {
             templateUrl: 'modules/stream/directives/stream-video-player/stream-video-player.html',
             restrict: 'E',
             replace: true,
-            scope: {
+            scope: {},
+            controller: controller,
+            controllerAs: 'vm',
+            bindToController: {
                 vidSrc: '@'
-            },
-            link: function (scope) {
-                scope.trustSrc = function () {
-                    if (!scope.vidSrc) {
-                        return undefined;
-                    }
-                    return $sce.trustAsResourceUrl(scope.vidSrc);
-                };
             }
-        };
-    });
+        }
+    }
+
+    angular.module('junnyria.stream').directive('videoPlayer', videoPlayer);
+})();

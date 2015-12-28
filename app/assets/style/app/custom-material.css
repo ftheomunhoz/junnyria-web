@@ -1,0 +1,65 @@
+/* Override Material Bootstrap */
+span {
+    color: #8b8b8b;
+    font-size: 14px;
+}
+
+label.control-label, label.control-label>span {
+    color: #636363;
+}
+
+.panel-header-title > span, .navbar {
+    color: #636363 !important;
+}
+
+.panel.panel-primary>.panel-heading {
+    background-color: #F1DB6F;
+}
+
+.navbar, .navbar.navbar-default {
+    background-color: #F1DB6F;
+}
+
+.btn-primary {
+    background-color: #F1DB6F !important;
+}
+
+.btn-primary.btn-icon {
+    background-color: #1C3144 !important;
+}
+
+.btn-primary.btn-icon > span {
+    color: #FFF !important;
+}
+
+.btn-primary, .btn-primary > span {
+    color: #636363 !important;
+}
+
+.form-control, .form-group .form-control {
+    border: 0;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#F1DB6F),to(#F1DB6F)),-webkit-gradient(linear,left top,left bottom,from(#D2D2D2),to(#D2D2D2)) !important;
+    background-image: -webkit-linear-gradient(#F1DB6F,#F1DB6F),-webkit-linear-gradient(#D2D2D2,#D2D2D2) !important;;
+    background-image: -o-linear-gradient(#F1DB6F,#F1DB6F),-o-linear-gradient(#D2D2D2,#D2D2D2) !important;;
+    background-image: linear-gradient(#F1DB6F,#F1DB6F),linear-gradient(#D2D2D2,#D2D2D2) !important;;
+}
+
+.form-group.is-focused label, .form-group.is-focused label.control-label {
+    color: #F1DB6F;
+}
+
+body, .panel-footer {
+    background-color: #FEFEFE;
+}
+
+.panel-footer > .form-group {
+    margin: -10px 0 0 0;
+}
+
+.btn-fab > span[class^="flaticon-"], .btn > span[class^="flaticon-"] {
+    margin-left: -20px;
+}
+
+.input-group-btn > .btn-fab {
+    margin-right: -10px !important;
+}

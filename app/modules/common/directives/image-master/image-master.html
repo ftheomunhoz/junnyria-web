@@ -1,13 +1,5 @@
 <div class="panel panel-primary">
-    <div class="panel-body panel-image-master"
-         draggable-bg="vm.masterImage">
-        <background-navigation ng-if="vm.showCameraMap === vm.CAMERA"></background-navigation>
-        <a class="btn btn-fab btn-primary btn-fab-mini btn-icon btn-navigation btn-navigation-menu"
-           ng-click="vm.toggleCameraMap()">
-            <span ng-if="vm.showCameraMap === vm.CAMERA" class="flaticon-camera21"></span>
-            <span ng-if="vm.showCameraMap === vm.MAP" class="flaticon-worldgrid"></span>
-        </a>
-
-        <stream-room ng-if="vm.showCameraMap === vm.MAP"></stream-room>
+    <div class="panel-body panel-image-master">
+        <stream-room></stream-room>
     </div>
 </div>

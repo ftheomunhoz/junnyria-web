@@ -3,14 +3,37 @@
  */
 
 
+(function () {
+    "use strict";
 
-angular.module('junnyria.stream')
-    .factory('roomService', function ($rootScope, $q) {
-
-        var iceConfig = {'iceServers': [{'url': 'stun:stun.l.google.com:19302'}]},
+    function roomService($q, appSettings) {
+        var iceConfig = {
+                iceServers: [
+                    {
+                        'url': appSettings.iceEndpoint
+                    }
+                ]
+            },
             peerConnections = {},
-            currentId, roomId,
-            stream;
+            currentId,
+            roomId,
+            stream,
+            socket = io.connect(appSettings.streamEndpoint),
+            connected = false;
+
+        alert(appSettings.streamEndpoint);
+
+        function addHandlers(socket) {
+            socket.on('peer.connected', function (params) {
+                makeOffer(params.id);
+            });
+            socket.on('peer.disconnected', function (data) {
+                api.trigger('peer.disconnected', [data]);
+            });
+            socket.on('msg', function (data) {
+                handleMessage(data);
+            });
+        }
 
         function getPeerConnection(id) {
             if (peerConnections[id]) {
@@ -23,16 +46,10 @@ angular.module('junnyria.stream')
                 socket.emit('msg', {by: currentId, to: id, ice: evnt.candidate, type: 'ice'});
             };
             pc.onaddstream = function (evnt) {
-                console.log('Received new stream');
                 api.trigger('peer.stream', [{
                     id: id,
                     stream: evnt.stream
                 }]);
-
-                //TO-D0: ABSURDO
-                if (!$rootScope.$$digest) {
-                    $rootScope.$apply();
-                }
             };
             return pc;
         }
@@ -41,10 +58,10 @@ angular.module('junnyria.stream')
             var pc = getPeerConnection(id);
             pc.createOffer(function (sdp) {
                     pc.setLocalDescription(sdp);
-                    console.log('Creating an offer for', id);
                     socket.emit('msg', {by: currentId, to: id, sdp: sdp, type: 'sdp-offer'});
                 }, function (e) {
-                    console.log(e);
+                    alert(1);
+                    console.error(e);
                 },
                 {mandatory: {offerToReceiveVideo: true, offerToReceiveAudio: true}});
         }
@@ -54,50 +71,31 @@ angular.module('junnyria.stream')
             switch (data.type) {
                 case 'sdp-offer':
                     pc.setRemoteDescription(new RTCSessionDescription(data.sdp), function () {
-                        console.log('Setting remote description by offer');
                         pc.createAnswer(function (sdp) {
                             pc.setLocalDescription(sdp);
                             socket.emit('msg', {by: currentId, to: data.by, sdp: sdp, type: 'sdp-answer'});
                         }, function (e) {
-                            console.log(e);
+                            alert(2);
+                            console.error(e);
                         });
                     }, function (e) {
-                        console.log(e);
+                        alert(3);
+                        console.error(e);
                     });
                     break;
                 case 'sdp-answer':
                     pc.setRemoteDescription(new RTCSessionDescription(data.sdp), function () {
-                        console.log('Setting remote description by answer');
                     }, function (e) {
+                        alert(4);
                         console.error(e);
                     });
                     break;
                 case 'ice':
                     if (data.ice) {
-                        console.log('Adding ice candidates');
                         pc.addIceCandidate(new RTCIceCandidate(data.ice));
                     }
                     break;
             }
-        }
-
-        var socket = io.connect('http://localhost:9010'),
-            connected = false;
-
-        function addHandlers(socket) {
-            socket.on('peer.connected', function (params) {
-                makeOffer(params.id);
-            });
-            socket.on('peer.disconnected', function (data) {
-                api.trigger('peer.disconnected', [data]);
-                //TO-DO: ABSURDO
-                if (!$rootScope.$$digest) {
-                    $rootScope.$apply();
-                }
-            });
-            socket.on('msg', function (data) {
-                handleMessage(data);
-            });
         }
 
         var api = {
@@ -124,9 +122,14 @@ angular.module('junnyria.stream')
                 stream = s;
             }
         };
-        EventEmitter.call(api);
-        Object.setPrototypeOf(api, EventEmitter.prototype);
 
+        EventEmitter.call(api);
+
+        Object.setPrototypeOf(api, EventEmitter.prototype);
         addHandlers(socket);
+
         return api;
-    });
+    }
+
+    angular.module('junnyria.stream').service('roomService', roomService);
+})();

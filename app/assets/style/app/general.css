@@ -1,0 +1,57 @@
+.btn-action {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.btn-action-container {
+    padding-top: 10px;
+}
+
+.main-content {
+    margin-top: 70px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.panel-footer-input {
+    height: 50px;
+}
+
+.btn-icon {
+    padding-top: 5px !important;
+    z-index: 100;
+}
+
+img {
+    border-radius: 5px;
+}
+
+.rotate-90 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0.5);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.rotate-180 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0.5);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.background-container {
+    background-image: url("/assets/images/worldmap.png");
+    height: 1200px;
+    width: 100%;
+    opacity: 0.2;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}

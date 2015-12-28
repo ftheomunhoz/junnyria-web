@@ -17,6 +17,6 @@ app.use(express.static(staticPath));
 app.set('view engine', 'html');
 app.set('views', path.join(rootPath, 'app'));
 
-app.listen(port, function() {
+app.listen(port, undefined, function() {
     console.log('Listening on port %d', port);
 });

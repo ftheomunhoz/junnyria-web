@@ -26,365 +26,18 @@
     <!-- Angular Draggable BG Directive -->
     <link href="bower_components/angular-draggable-bg/build/draggable-bg.min.css" rel="stylesheet">
 
-    <style>
-        /* Override Material Bootstrap */
-        span {
-            color: #8b8b8b;
-            font-size: 14px;
-        }
-
-        label.control-label, label.control-label>span {
-            color: #636363;
-        }
-
-        .panel-header-title > span, .navbar {
-            color: #636363 !important;
-        }
-
-        .panel.panel-primary>.panel-heading {
-            background-color: #F1DB6F;
-        }
-
-        .navbar, .navbar.navbar-default {
-            background-color: #F1DB6F;
-        }
-
-        .btn-primary {
-            background-color: #F1DB6F !important;
-        }
-
-        .btn-primary.btn-icon {
-            background-color: #1C3144 !important;
-        }
-
-        .btn-primary.btn-icon > span {
-            color: #FFF !important;
-        }
-
-        .btn-primary, .btn-primary > span {
-            color: #636363 !important;
-        }
-
-        .form-control, .form-group .form-control {
-            border: 0;
-            background-image: -webkit-gradient(linear,left top,left bottom,from(#F1DB6F),to(#F1DB6F)),-webkit-gradient(linear,left top,left bottom,from(#D2D2D2),to(#D2D2D2)) !important;
-            background-image: -webkit-linear-gradient(#F1DB6F,#F1DB6F),-webkit-linear-gradient(#D2D2D2,#D2D2D2) !important;;
-            background-image: -o-linear-gradient(#F1DB6F,#F1DB6F),-o-linear-gradient(#D2D2D2,#D2D2D2) !important;;
-            background-image: linear-gradient(#F1DB6F,#F1DB6F),linear-gradient(#D2D2D2,#D2D2D2) !important;;
-        }
-
-        .form-group.is-focused label, .form-group.is-focused label.control-label {
-            color: #F1DB6F;
-        }
-
-        body, .panel-footer {
-            background-color: #FEFEFE;
-        }
-
-        /* APP */
-        .btn-action {
-            background-color: transparent !important;
-            box-shadow: none !important;
-        }
-
-        .btn-action-container {
-            padding-top: 10px;
-        }
-
-        .progress .progress-bar.progress-bar-experience {
-            background-color: #F1DB6F;
-        }
-
-        .progress .progress-bar.progress-bar-health {
-            background-color: #00f14a;
-        }
-
-        .progress .progress-bar.progress-bar-health-danger {
-            background-color: #f10027;
-        }
-
-        .progress .progress-bar.progress-bar-mana {
-            background-color: #001af1;
-        }
-
-        .progress .progress-bar-darkness {
-            background-color: #000;
-        }
-
-        .progress .progress-bar-water {
-            background-color: #6fc4f1;
-        }
-
-        .navbar-fixed-top {
-            opacity: 0.8;
-        }
-
-        .main-content {
-            margin-top: 70px;
-        }
-
-        .panel-activities {
-            overflow: auto;
-        }
-
-        @media (min-width: 1200px) {
-            .panel-image-master {
-                height: 500px;
-            }
-        }
-
-        @media (max-width: 1999px) {
-            .panel-activities {
-                height: 275px;
-            }
-        }
-
-        .panel-attention {
-            height: 325px;
-            overflow: hidden;
-        }
-
-        .panel-attention .btn-icon {
-            margin-top: 120px;
-        }
-
-        .attention-img {
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 280px;
-            background-size: contain;
-            text-align: center;
-        }
-
-        .attention-img > label {
-            font-weight: bold;
-            color: #BACBA9;
-            padding-top: 10px;
-        }
-
-        .panel-body img {
-            max-height: 100%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .panel-attention .bs-component {
-            margin-top: 13px;
-        }
-
-        .item-activity {
-            margin-bottom: 10px;
-        }
-
-        .panel-footer > .form-group {
-            margin: -10px 0 0 0;
-        }
-
-        .panel-footer-input {
-            height: 50px;
-        }
-
-        .btn-fab > span[class^="flaticon-"], .btn > span[class^="flaticon-"] {
-            margin-left: -20px;
-        }
-
-        .btn-icon {
-            padding-top: 5px !important;
-            z-index: 100;
-        }
-
-        .input-group-btn > .btn-fab {
-            margin-right: -10px !important;
-        }
-
-        .panel-player label:first-child {
-            margin-top: 10px;
-        }
-
-        .btn-panel-header {
-            margin: 0;
-            padding: 0 10px;
-        }
-
-        .pointer {
-            cursor: pointer;
-        }
-
-        .panel-image-master video {
-            border-radius: 2px;
-            width: 100%;
-            margin-top: -15px;
-            cursor: default;
-        }
-
-        .panel-image-master {
-            cursor: move;
-            border-radius: 2px;
-        }
-
-        @media (min-width: 1200px) {
-            .panel-image-master, .panel-image-master video {
-                height: 500px;
-            }
-        }
-
-        @media (max-width: 1999px) {
-            .panel-image-master, .panel-image-master video {
-                height: 385px;
-            }
-        }
-
-        .open > .panel-menu {
-            display: block;
-        }
-
-        .panel-menu {
-            position: absolute;
-            display: none;
-            right: 15px;
-            z-index: 1000;
-            margin-top: 45px;
-            background-color: white;
-            color: black;
-            padding: 10px 20px;
-            list-style: none;
-            border-radius: 2px;
-            border: 0;
-            text-align: left;
-            -webkit-box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
-            box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
-            cursor: pointer;
-            width: 250px;
-        }
-
-        .panel-menu > li {
-            padding: 5px 0;
-        }
-
-        .panel-header-title {
-            margin-top: 15px;
-        }
-
-        .btn-navigation {
-            position: absolute !important;
-        }
-
-        .btn-navigation-left {
-            bottom: 25px;
-            left: 20px
-        }
-
-        .btn-navigation-right {
-            bottom: 25px;
-            right: 20px
-        }
-
-        .btn-navigation-down {
-            bottom: 75px;
-            left: 20px
-        }
-
-        .btn-navigation-up {
-            top: 5px;
-            left: 20px
-        }
-
-        .btn-navigation-menu {
-            top: 5px;
-            right: 20px
-        }
-
-        .rotate-90 {
-            filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=0.5);
-            -webkit-transform: rotate(90deg);
-            -moz-transform: rotate(90deg);
-            -ms-transform: rotate(90deg);
-            -o-transform: rotate(90deg);
-            transform: rotate(90deg);
-        }
-
-        .rotate-180 {
-            filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=0.5);
-            -webkit-transform: rotate(180deg);
-            -moz-transform: rotate(180deg);
-            -ms-transform: rotate(180deg);
-            -o-transform: rotate(180deg);
-            transform: rotate(180deg);
-        }
-
-        .btn-dice {
-            text-transform: none;
-            margin-bottom: 0;
-            background-color: #1C3144 !important;
-            color: #FFF !important;
-        }
-
-        .card-title {
-            font-size: 18px;
-        }
-
-        .vertical-menu {
-            list-style: none;
-            border-top: none;
-            border-right: none;
-            border-bottom: transparent;
-            border-left: 5px solid #F1DB6F;
-            padding-left: 0;
-        }
-
-        .vertical-menu > li {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-
-        .vertical-menu > li > label > span {
-            font-size: 13px;
-            cursor: pointer;
-
-            -webkit-transition: font 0.2s cubic-bezier(.4,0,1,1);
-            -moz-transition: font 0.2s cubic-bezier(.4,0,1,1);
-            -o-transition: font 0.2s cubic-bezier(.4,0,1,1);
-            -ms-transition: font 0.2s cubic-bezier(.4,0,1,1);
-        }
-
-        .vertical-menu > li.active > label > span {
-            color: #BACBA9 !important;
-        }
-
-        .vertical-menu > li:not(.active) > label > span {
-            font-size: 15px;
-        }
-
-        .vertical-menu > li > label:first-child {
-            margin-top: 0;
-        }
-
-        .vertical-menu > li > label:last-child {
-            margin-bottom: 0;
-        }
-
-        img {
-            border-radius: 5px;
-        }
-
-        .img-avatar {
-            margin-top: 10px;
-        }
-
-        .item-list {
-            list-style: none;
-            margin-left: 0;
-            padding-left: 10px;
-        }
-    </style>
+    <!-- APP -->
+    <link href="assets/style/app/custom-material.css" rel="stylesheet">
+    <link href="assets/style/app/general.css" rel="stylesheet">
+    <link href="assets/style/app/player.css" rel="stylesheet">
 </head>
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target=".navbar-responsive-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -394,15 +47,11 @@
     </div>
 </nav>
 
-<span class="visible-xs">XS</span>
-<span class="visible-sm">SM</span>
-<span class="visible-md">MD</span>
-<span class="visible-lg">LG</span>
-
 <div class="main-content">
     <div class="container-fluid">
         <div ui-view></div>
     </div>
+    <div class="background-container"></div>
 </div>
 
 
@@ -430,6 +79,8 @@
 
 <!-- App -->
 <script src="junnyria.js"></script>
+<script src="config/settings.js"></script>
+
 <script src="modules/common/common.module.js"></script>
 <script src="modules/common/common.config.js"></script>
 <script src="modules/common/common.run.js"></script>
@@ -445,8 +96,8 @@
 <script src="modules/stream/stream-video-player.config.js"></script>
 <script src="modules/stream/services/stream-service.js"></script>
 <script src="modules/stream/services/room-service.js"></script>
-<script src="modules/stream/directives/stream-video-player/stream-video-player.js"></script>
 <script src="modules/stream/directives/stream-room/stream-room.js"></script>
+<script src="modules/stream/directives/stream-video-player/stream-video-player.js"></script>
 
 <script src="modules/player/player.module.js"></script>
 <script src="modules/player/player.config.js"></script>
