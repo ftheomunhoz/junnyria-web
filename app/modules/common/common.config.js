@@ -7,7 +7,14 @@
 (function () {
     "use strict";
 
-    function config(authProvider) {
+    function config($stateProvider, authProvider) {
+        $stateProvider
+            .state('login', {
+                url: "/login",
+                templateUrl: "modules/common/views/login.html",
+                controller: "loginController as vm"
+            });
+
         //TODO: Maybe move to config?
         authProvider.init({
             domain: 'app44880966.auth0.com',

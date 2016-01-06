@@ -17,6 +17,8 @@
     function run($state, auth, store) {
         auth.hookEvents();
 
+        $state.go('login');
+        /*
         auth.signin({}, function (profile, token) {
             $state.go('player');
 
@@ -25,6 +27,9 @@
         }, function (err) {
             console.error(err);
         });
+        */
+
+        //auth.signin();
 
     }
 
