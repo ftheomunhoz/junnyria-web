@@ -9,6 +9,9 @@
 
     angular.module('junnyria.common',[
         'ui.router',
-        'junnyria.stream'
+        'junnyria.stream',
+        'auth0',
+        'angular-storage',
+        'angular-jwt'
     ]);
 })();
