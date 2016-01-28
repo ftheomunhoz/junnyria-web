@@ -26,6 +26,7 @@
                 makeOffer(params.id);
             });
             socket.on('peer.disconnected', function (data) {
+                console.log('dc', data);
                 api.trigger('peer.disconnected', [data]);
             });
             socket.on('msg', function (data) {

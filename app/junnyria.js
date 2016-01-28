@@ -9,6 +9,7 @@
 
     angular.module('junnyria',[
         'junnyria.common',
+        'junnyria.login',
         'junnyria.player'
     ]);
 })();

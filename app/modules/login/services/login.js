@@ -22,5 +22,5 @@
         }
     }
 
-    angular.module('junnyria.common').service('loginService', loginService);
+    angular.module('junnyria.login').service('loginService', loginService);
 })();

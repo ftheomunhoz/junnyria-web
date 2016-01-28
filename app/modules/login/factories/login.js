@@ -26,5 +26,5 @@
         }
     }
 
-    angular.module('junnyria.common').service('loginFactory', loginFactory);
+    angular.module('junnyria.login').service('loginFactory', loginFactory);
 })();

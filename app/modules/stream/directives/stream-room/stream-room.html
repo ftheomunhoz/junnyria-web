@@ -2,7 +2,9 @@
     <label class="control-label" ng-if="vm.peers.length === 0">
         Não existe transmissão neste momento.
     </label>
-    <video-player vid-src="{{vm.peers[0].stream}}"></video-player>
+    <div ng-if="vm.peers.length > 0">
+        <video-player vid-src="{{vm.peers[0].stream}}"></video-player>
+    </div>
 
     <video ng-if="vm.showSelf" ng-src="{{vm.getLocalVideo()}}" autoplay muted></video>
 </div>

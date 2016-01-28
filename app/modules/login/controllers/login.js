@@ -30,5 +30,5 @@
     }
 
 
-    angular.module('junnyria.common').controller('loginController', loginController);
+    angular.module('junnyria.login').controller('loginController', loginController);
 })();
