@@ -1,9 +1,7 @@
-function init() {
-    cd ../
-}
+#!/bin/bash
 
-function defineSettings() {
-    cd app/config
-    rm 'settings.js'
-    mv 'settings'+$env+'.js' 'settings.js'
-}
+cd ../
+
+cd app/config
+rm 'settings.js'
+mv 'settings'+$env+'.js' 'settings.js'
