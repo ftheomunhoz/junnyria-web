@@ -8,11 +8,32 @@
 (function () {
     "use strict";
 
-    function loginFormController($state){
+    function loginFormController(loginService, loginFactory, $state, activeUserFactory, auth){
         var vm = this;
 
         vm.login = function() {
-            $state.go('player');
+            if (vm.formLogin.$invalid) {
+                return;
+            }
+
+            var loginData = loginFactory.loginToService({
+                username: vm.username,
+                password: vm.password,
+                connection: 'facebook'
+            });
+
+            auth.signin(loginData, function(profile, idToken, accessToken, state, refreshToken) {
+                console.log(arguments);
+            }, function(error) {
+                console.log(error);
+            });
+
+            //loginService.login(loginData).then(function(response) {
+            //    if (angular.isDefined(response, response.status) && response.status === 200) {
+            //        activeUserFactory.setActiveUser(response.data);
+            //        $state.go('player');
+            //    }
+            //});
         };
     }
 

@@ -21,6 +21,7 @@
                 }
             },
             loginToService: function(request) {
+                request.scope = "openid name email";
                 return request;
             }
         }

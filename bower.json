@@ -36,6 +36,7 @@
     "angular-cookies": "~1.4.8",
     "auth0-lock": "~8.1.1",
     "angular-jwt": "~0.0.9",
-    "auth0-angular": "~4.1.0"
+    "auth0-angular": "~4.1.0",
+    "auth0.js": "~6.8.0"
   }
 }
