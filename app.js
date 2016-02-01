@@ -17,9 +17,10 @@ app.use(express.static(staticPath));
 
 app.use(function (req, res, next) {
     if (process.env.NODE_ENV === 'production' && req.headers['x-forwarded-proto'] !== 'https') {
+        console.log('@@@@@@@@@@@@@@@@@@@@', "OK");
         return res.redirect('https://' + req.headers.host + req.url);
     } else {
-        console.log(process.env.NODE_ENV, req.headers['x-forwarded-proto']);
+        console.log('@@@@@@@@@@@@@@@@@@@@@@', process.env.NODE_ENV, req.headers['x-forwarded-proto']);
 
         return next();
     }

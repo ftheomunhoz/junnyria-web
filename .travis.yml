@@ -28,6 +28,9 @@ addons:
     packages:
       - g++-4.8
 
+before_install:
+  - ./bin/before_install.sh
+
 install:
   # Disable the spinner
   - npm config set spin false
