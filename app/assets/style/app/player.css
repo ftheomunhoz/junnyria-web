@@ -34,12 +34,12 @@
 
 @media (max-width: 1999px) {
     .panel-activities {
-        height: 275px;
+        height: 290px;
     }
 }
 
 .panel-attention {
-    height: 325px;
+    height: 340px;
     overflow: hidden;
 }
 
@@ -89,26 +89,18 @@
     padding: 0 10px;
 }
 
-.panel-image-master video {
-    border-radius: 2px;
-    width: 100%;
-    margin-top: -15px;
-    cursor: default;
-}
-
 .panel-image-master {
-    /*cursor: move;*/
     border-radius: 2px;
 }
 
 @media (min-width: 1200px) {
-    .panel-image-master, .panel-image-master video {
+    .panel-image-master {
         height: 500px;
     }
 }
 
 @media (max-width: 1999px) {
-    .panel-image-master, .panel-image-master video {
+    .panel-image-master {
         height: 385px;
     }
 }
@@ -141,7 +133,8 @@
 }
 
 .panel-header-title {
-    margin-top: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .btn-navigation {

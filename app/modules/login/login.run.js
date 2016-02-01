@@ -14,10 +14,20 @@
 (function () {
     "use strict";
 
-    function run(auth, $state) {
+    function run(auth, activeUserFactory, jwtHelper, $rootScope, $location) {
         auth.hookEvents();
 
-        $state.go('login');
+        $rootScope.$on('$stateChangeStart', function () {
+            var token = activeUserFactory.getToken();
+
+            if (token && !jwtHelper.isTokenExpired(token)) {
+                if (!auth.isAuthenticated) {
+                    auth.authenticate(activeUserFactory.getActiveUser(), token);
+                }
+            } else {
+                $location.path('/login');
+            }
+        });
     }
 
     angular.module('junnyria.login').run(run);

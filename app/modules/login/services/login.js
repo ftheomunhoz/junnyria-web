@@ -7,17 +7,10 @@
 
 (function(){
     "use strict";
-    function loginService($q) {
+    function loginService(auth) {
         return {
-            login: function(data) {
-                var deffered = $q.defer();
-
-                deffered.resolve({
-                    status: 200,
-                    data: data
-                });
-
-                return deffered.promise;
+            login: function(data, success, error) {
+                return auth.signin(data, success, error);
             }
         }
     }

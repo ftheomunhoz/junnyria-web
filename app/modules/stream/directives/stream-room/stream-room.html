@@ -1,10 +1,28 @@
-<div>
-    <label class="control-label" ng-if="vm.peers.length === 0">
-        Não existe transmissão neste momento.
-    </label>
-    <div ng-if="vm.peers.length > 0">
-        <video-player vid-src="{{vm.peers[0].stream}}"></video-player>
+<div class="row stream-video">
+    <div class="col-xs-24" ng-if="vm.peers.length === 0">
+        <label class="control-label">
+            Não existe transmissão neste momento.
+        </label>
     </div>
 
-    <video ng-if="vm.showSelf" ng-src="{{vm.getLocalVideo()}}" autoplay muted></video>
+    <div ng-if="vm.peers.length > 0">
+        <div class="col-xs-12 stream-video-full">
+            <div class="row">
+                <div class="col-xs-24">
+                    <video-player vid-src="{{vm.peers[0].stream}}"></video-player>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 stream-video-peers">
+            <div class="row">
+                <div class="col-xs-8">
+                    <video ng-if="vm.showSelf" ng-src="{{vm.getLocalVideo()}}" autoplay muted></video>
+                </div>
+
+                <div ng-repeat="peer in vm.peers track by $index" class="col-xs-8">
+                    <video-player ng-if="$index > 1" vid-src="{{peer.stream}}"></video-player>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

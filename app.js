@@ -15,13 +15,9 @@ var app = express();
 var staticPath = path.resolve(path.join(__dirname, 'app'));
 app.use(express.static(staticPath));
 
-app.use(function(req, res, next) {
-    if (process.env.NODE_ENV === 'production') {
-        if (req.headers['x-forwarded-proto'] != 'https') {
-            return res.redirect('https://' + req.headers.host + req.url);
-        } else {
-            return next();
-        }
+app.use(function (req, res, next) {
+    if (process.env.NODE_ENV.toLowerCase() === 'production' && req.headers['x-forwarded-proto'] !== 'https') {
+        return res.redirect('https://' + req.headers.host + req.url);
     } else {
         return next();
     }
@@ -30,6 +26,6 @@ app.use(function(req, res, next) {
 app.set('view engine', 'html');
 app.set('views', path.join(rootPath, 'app'));
 
-app.listen(port, undefined, function() {
+app.listen(port, undefined, function () {
     console.log('Listening on port %d', port);
 });

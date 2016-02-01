@@ -12,7 +12,10 @@
             .state('player', {
                 url: "/player",
                 templateUrl: "modules/player/views/player.html",
-                controller: "playerController as vm"
+                controller: "playerController as vm",
+                data: {
+                    requiresLogin: true
+                }
             });
     }
 

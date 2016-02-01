@@ -5,3 +5,19 @@
 .login-block {
     margin-top: 50px;
 }
+
+.btn-login {
+    min-width: 120px;
+}
+
+.btn-login > span {
+    color: white;
+}
+
+.btn-facebook, .btn-facebook:hover, .btn-facebook:focus {
+    background: #3b5998 !important;
+}
+
+.btn-google, .btn-google :hover, .btn-google :focus {
+    background: #d34836 !important;
+}

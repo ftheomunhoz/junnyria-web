@@ -1,0 +1,29 @@
+.stream-video video {
+    border-radius: 2px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    height: 100px;
+}
+
+.stream-video-full {
+    margin: -15px 0 0 0;
+    padding: 0 15px;
+}
+
+.stream-video-peers {
+    margin-top: 15px;
+}
+
+@media (min-width: 1200px) {
+    .stream-video .stream-video-full video {
+        height: 500px !important;
+    }
+}
+
+@media (max-width: 1999px) {
+    .panel-image-master .stream-video-full video {
+        height: 385px !important;;
+    }
+}

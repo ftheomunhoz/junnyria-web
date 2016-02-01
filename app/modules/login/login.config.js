@@ -7,7 +7,7 @@
 (function () {
     "use strict";
 
-    function config($stateProvider, authProvider) {
+    function config($stateProvider, $urlRouterProvider, authProvider, jwtInterceptorProvider, $httpProvider) {
         $stateProvider
             .state('login', {
                 url: "/login",
@@ -15,11 +15,18 @@
                 controller: "loginController as vm"
             });
 
-        //TODO: Maybe move to config?
+        $urlRouterProvider.otherwise('/login');
+
         authProvider.init({
             domain: 'app44880966.auth0.com',
-            clientID: 'QX8GEgdK1R28ZdC1uF5JlsnvZZRByoft'
+            clientID: 'TnMTRFqgFsjDRpWUi5LE1VHvJ0kqg3yD'
         });
+
+        jwtInterceptorProvider.tokenGetter = ['store', function(store) {
+            return store.get('token');
+        }];
+
+        $httpProvider.interceptors.push('jwtInterceptor');
     }
 
     angular.module('junnyria.login').config(config);

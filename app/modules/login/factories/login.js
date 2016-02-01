@@ -7,7 +7,7 @@
 
 (function(){
     "use strict";
-    function loginFactory() {
+    function loginFactory(appSettings) {
         return {
             loginToEntity: function(response) {
                 if (angular.isUndefined(response) || angular.isUndefined(response.data)) {
@@ -21,8 +21,11 @@
                 }
             },
             loginToService: function(request) {
-                request.scope = "openid name email";
-                return request;
+                return {
+                    popup: true,
+                    connection: appSettings[request.connection],
+                    scope: 'openid name email'
+                };
             }
         }
     }

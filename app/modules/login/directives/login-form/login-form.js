@@ -8,32 +8,21 @@
 (function () {
     "use strict";
 
-    function loginFormController(loginService, loginFactory, $state, activeUserFactory, auth){
+    function loginFormController(loginService, loginFactory, $state, activeUserFactory) {
         var vm = this;
 
-        vm.login = function() {
-            if (vm.formLogin.$invalid) {
-                return;
-            }
-
+        vm.login = function (provider) {
             var loginData = loginFactory.loginToService({
-                username: vm.username,
-                password: vm.password,
-                connection: 'facebook'
+                connection: provider
             });
 
-            auth.signin(loginData, function(profile, idToken, accessToken, state, refreshToken) {
-                console.log(arguments);
-            }, function(error) {
-                console.log(error);
+            loginService.login(loginData, function (profile, token) {
+                activeUserFactory.setActiveUser(profile, token);
+                $state.go('player');
+            }, function (err) {
+                //TODO: HANDLE
+                console.log("NOK", arguments);
             });
-
-            //loginService.login(loginData).then(function(response) {
-            //    if (angular.isDefined(response, response.status) && response.status === 200) {
-            //        activeUserFactory.setActiveUser(response.data);
-            //        $state.go('player');
-            //    }
-            //});
         };
     }
 

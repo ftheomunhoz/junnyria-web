@@ -12,49 +12,22 @@
         <div class="row">
             <div class="col-xs-24">
                 <form id="formLogin" name="vm.formLogin" novalidate anchor-submit>
-                    <div class="row">
+                    <div class="row text-center">
                         <div class="col-xs-24">
-                            <div class="form-group label-floating is-empty"
-                                 ng-class="{'has-error': showLoginHelp}">
-                                <label for="txtUsername" class="control-label">Usuário</label>
-                                <input type="text" class="form-control" id="txtUsername" name="username"
-                                       ng-model="vm.username" required>
-                                <p ng-if="showLoginHelp = vm.formLogin.$submitted && vm.formLogin.username.$invalid"
-                                   class="help-block">
-                                    <span>Preencher seu nome de usuário.</span>
-                                </p>
-                            </div>
+                            <label>Faça o login utilizando a rede social de sua preferência.</label>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-xs-24">
-                            <div class="form-group label-floating is-empty"
-                                 ng-class="{'has-error': showPasswordHelp}">
-                                <label for="txtPassword" class="control-label">Senha</label>
-                                <input type="password" class="form-control" id="txtPassword" name="password"
-                                       ng-model="vm.password" required>
-                                <p ng-if="showPasswordHelp = vm.formLogin.$submitted && vm.formLogin.password.$invalid"
-                                   class="help-block">
-                                    <span>Preencher sua senha.</span>
-                                </p>
-                            </div>
+                    <div class="row text-center">
+                        <div class="col-sm-12 col-xs-24">
+                            <button class="btn btn-sm btn-login btn-facebook" ng-click="vm.login('FACEBOOK')">
+                                <span class="flaticon-facebook3"></span>
+                            </button>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="text-center col-xs-24">
-                            <br/>
-                            <a href="javascript:void(0)" class="btn btn-block btn-large btn-raised btn-primary"
-                               type="submit"
-                               ng-click="vm.login()">LOGIN</a>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-24">
-                            <br/>
-                            <a href="javascript:void(0)" ng-click="">Ainda não sou cadastrado</a>
+                        <div class="col-sm-12 col-xs-24">
+                            <button class="btn btn-sm btn-login btn-google" ng-click="vm.login('GOOGLE')">
+                                <span class="flaticon-google-plus"></span>
+                            </button>
                         </div>
                     </div>
                 </form>
