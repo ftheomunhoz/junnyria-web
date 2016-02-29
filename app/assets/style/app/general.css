@@ -47,7 +47,7 @@ img {
 }
 
 .background-container {
-    background-image: url("/assets/images/worldmap.png");
+    /*background-image: url("/assets/images/worldmap.png");*/
     height: 1200px;
     width: 100%;
     opacity: 0.2;

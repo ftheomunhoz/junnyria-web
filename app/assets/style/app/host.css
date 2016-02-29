@@ -1,0 +1,36 @@
+#char-row-host {
+    background-color: #F5F4F4;
+    padding: 30px 15px;
+}
+
+@media (min-width: 1200px) {
+    #char-row-host {
+        margin-top: -10px;
+    }
+}
+
+@media (max-width: 1199px) {
+    #char-row-host {
+        margin-top: -20px;
+    }
+}
+
+#char-row-host .panel-primary {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+#char-row-host .img-avatar {
+    margin-bottom: 10px;
+}
+
+.btn-delete {
+    height: 30px !important;
+    min-width: 30px !important;
+    width: 30px !important;
+}
+
+.btn-delete > span {
+    color: black;
+    font-size: 10px;
+}

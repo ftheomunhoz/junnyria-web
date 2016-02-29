@@ -9,15 +9,15 @@
 
     function config($stateProvider) {
         $stateProvider
-            .state('player', {
-                url: "/player",
-                templateUrl: "modules/player/views/player.html",
-                controller: "playerController as vm",
+            .state('host', {
+                url: "/host",
+                templateUrl: "modules/host/views/host.html",
+                controller: "hostController as hostVM",
                 data: {
                     requiresLogin: false
                 }
             });
     }
 
-    angular.module('junnyria.player').config(config);
+    angular.module('junnyria.host').config(config);
 })();

@@ -10,6 +10,7 @@
 
     var appSettings = {
         streamEndpoint: 'http://localhost:9010',
+        hostEndpoint: 'http://localhost:8080',
 
         iceEndpoint: 'stun:stun.l.google.com:19302',
         masterRoom: 'MASTER-ROOM',

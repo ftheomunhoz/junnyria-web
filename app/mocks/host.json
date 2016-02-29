@@ -1,0 +1,46 @@
+{
+  "charList": [
+    {
+      "id": "1",
+      "name": "First Char 1",
+      "level": 12,
+      "class": "Ladino",
+      "avatar": "/assets/images/wizard.png"
+    },
+    {
+      "id": "2",
+      "name": "First Char 2",
+      "level": 12,
+      "class": "Ladino",
+      "avatar": "/assets/images/wizard.png"
+    },
+    {
+      "id": "3",
+      "name": "First Char 3",
+      "level": 12,
+      "class": "Ladino",
+      "avatar": "/assets/images/wizard.png"
+    },
+    {
+      "id": "4",
+      "name": "First Char 4",
+      "level": 12,
+      "class": "Ladino",
+      "avatar": "/assets/images/wizard.png"
+    },
+    {
+      "id": "5",
+      "name": "First Char 5",
+      "level": 12,
+      "class": "Ladino",
+      "avatar": "/assets/images/wizard.png"
+    },
+    {
+      "id": "6",
+      "name": "First Char 6",
+      "level": 12,
+      "class": "Ladino",
+      "avatar": "/assets/images/wizard.png"
+    }
+  ]
+}

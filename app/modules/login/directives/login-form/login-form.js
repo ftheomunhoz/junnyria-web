@@ -8,7 +8,7 @@
 (function () {
     "use strict";
 
-    function loginFormController(loginService, loginFactory, $state, activeUserFactory) {
+    function loginFormController(loginService, loginFactory, $state, activeUserFactory, appSettings) {
         var vm = this;
 
         vm.login = function (provider) {
@@ -18,7 +18,7 @@
 
             loginService.login(loginData, function (profile, token) {
                 activeUserFactory.setActiveUser(profile, token);
-                $state.go('player');
+                $state.go(appSettings.defaultRoute);
             }, function (err) {
                 //TODO: HANDLE
                 console.log("NOK", arguments);

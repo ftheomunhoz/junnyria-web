@@ -4,7 +4,7 @@ span {
     font-size: 14px;
 }
 
-label.control-label, label.control-label>span {
+label.control-label, label.control-label > span {
     color: #636363;
 }
 
@@ -12,7 +12,7 @@ label.control-label, label.control-label>span {
     color: #636363 !important;
 }
 
-.panel.panel-primary>.panel-heading {
+.panel.panel-primary > .panel-heading {
     background-color: #F1DB6F;
 }
 
@@ -38,10 +38,10 @@ label.control-label, label.control-label>span {
 
 .form-control, .form-group .form-control {
     border: 0;
-    background-image: -webkit-gradient(linear,left top,left bottom,from(#F1DB6F),to(#F1DB6F)),-webkit-gradient(linear,left top,left bottom,from(#D2D2D2),to(#D2D2D2)) !important;
-    background-image: -webkit-linear-gradient(#F1DB6F,#F1DB6F),-webkit-linear-gradient(#D2D2D2,#D2D2D2) !important;;
-    background-image: -o-linear-gradient(#F1DB6F,#F1DB6F),-o-linear-gradient(#D2D2D2,#D2D2D2) !important;;
-    background-image: linear-gradient(#F1DB6F,#F1DB6F),linear-gradient(#D2D2D2,#D2D2D2) !important;;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F1DB6F), to(#F1DB6F)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2)) !important;
+    background-image: -webkit-linear-gradient(#F1DB6F, #F1DB6F), -webkit-linear-gradient(#D2D2D2, #D2D2D2) !important;;
+    background-image: -o-linear-gradient(#F1DB6F, #F1DB6F), -o-linear-gradient(#D2D2D2, #D2D2D2) !important;;
+    background-image: linear-gradient(#F1DB6F, #F1DB6F), linear-gradient(#D2D2D2, #D2D2D2) !important;;
 }
 
 .form-group.is-focused label, .form-group.is-focused label.control-label {

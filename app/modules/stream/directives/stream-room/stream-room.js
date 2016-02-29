@@ -70,6 +70,7 @@
             var destroy = scope.$on('$destroy', function() {
                 roomService.leaveRoom();
                 streamService.leave();
+                console.log("DESTROY STREAM ROOM")
                 destroy();
             });
         }

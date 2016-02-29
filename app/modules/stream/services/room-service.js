@@ -18,15 +18,14 @@
             currentId,
             roomId,
             stream,
-            socket = io.connect(appSettings.streamEndpoint),
-            connected = false;
+            connected = false,
+            socket = io.connect(appSettings.streamEndpoint);
 
         function addHandlers(socket) {
             socket.on('peer.connected', function (params) {
                 makeOffer(params.id);
             });
             socket.on('peer.disconnected', function (data) {
-                console.log('dc', data);
                 api.trigger('peer.disconnected', [data]);
             });
             socket.on('msg', function (data) {
