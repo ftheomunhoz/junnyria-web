@@ -1,3 +1,7 @@
+body {
+    background-color: #F5F4F4;
+}
+
 .btn-action {
     background-color: transparent !important;
     box-shadow: none !important;

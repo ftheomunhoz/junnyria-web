@@ -20,22 +20,6 @@ label.control-label, label.control-label > span {
     background-color: #F1DB6F;
 }
 
-.btn-primary {
-    background-color: #F1DB6F !important;
-}
-
-.btn-primary.btn-icon {
-    background-color: #1C3144 !important;
-}
-
-.btn-primary.btn-icon > span {
-    color: #FFF !important;
-}
-
-.btn-primary, .btn-primary > span {
-    color: #636363 !important;
-}
-
 .form-control, .form-group .form-control {
     border: 0;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#F1DB6F), to(#F1DB6F)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2)) !important;
@@ -62,4 +46,29 @@ body, .panel-footer {
 
 .input-group-btn > .btn-fab {
     margin-right: -10px !important;
+}
+
+/* BUTTONS */
+.btn-primary {
+    background-color: #F1DB6F !important;
+}
+
+.btn-primary.btn-icon {
+    background-color: #1C3144 !important;
+}
+
+.btn-primary.btn-icon > span {
+    color: #FFF !important;
+}
+
+.btn-primary, .btn-primary > span, .btn-info, .btn-info> span {
+    color: #636363 !important;
+}
+
+.btn-info.btn-icon {
+    background-color: #D6D6D6 !important;
+}
+
+.btn-info.btn-icon > span {
+    color: #636363 !important;
 }

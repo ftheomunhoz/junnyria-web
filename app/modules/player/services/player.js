@@ -7,13 +7,13 @@
 (function () {
     "use strict";
 
-    function hostService($http, appSettings) {
+    function playerService($http, appSettings) {
         return {
-            getCharList: function () {
+            getChar: function () {
                 return $http.get(appSettings.charEndpoint + '/char');
             }
         }
     }
 
-    angular.module('junnyria.host').service("hostService", hostService);
+    angular.module('junnyria.player').service("playerService", playerService);
 })();

@@ -19,7 +19,8 @@
 
         authProvider.init({
             domain: 'app44880966.auth0.com',
-            clientID: 'TnMTRFqgFsjDRpWUi5LE1VHvJ0kqg3yD'
+            clientID: 'TnMTRFqgFsjDRpWUi5LE1VHvJ0kqg3yD',
+            loginUrl: '/login'
         });
 
         jwtInterceptorProvider.tokenGetter = ['store', function(store) {

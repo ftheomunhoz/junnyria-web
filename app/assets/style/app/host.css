@@ -1,6 +1,6 @@
 #char-row-host {
-    background-color: #F5F4F4;
-    padding: 30px 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 @media (min-width: 1200px) {
@@ -33,4 +33,28 @@
 .btn-delete > span {
     color: black;
     font-size: 10px;
+}
+
+.host-card {
+    margin-top: 25px;
+}
+
+.host-panel-new {
+    background-color: transparent;
+    border: 2px dashed #1C3144;
+    box-shadow: none;
+    height: 351px;
+}
+
+.host-panel-new label {
+    color: black;
+}
+
+.host-panel-new .row:first-child {
+    margin-bottom: 120px;
+    margin-top: 60px;
+}
+
+.host-panel-new:hover {
+    background-color: rgba(241, 219, 111, 0.3);
 }

@@ -23,7 +23,7 @@
             loginToService: function(request) {
                 return {
                     popup: true,
-                    connection: appSettings[request.connection],
+                    connection: appSettings.socialLogin[request.connection],
                     scope: 'openid name email'
                 };
             }

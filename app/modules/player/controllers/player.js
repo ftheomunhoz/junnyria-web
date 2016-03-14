@@ -8,17 +8,16 @@
 (function () {
     "use strict";
 
-    function playerController(activeUserFactory) {
+    function playerController(activeUserFactory, activeCharFactory) {
         var vm = this;
 
         var activeUser = activeUserFactory.getActiveUser();
 
-        vm.realName = activeUser.given_name;
+        vm.realName = activeUser ? activeUser.given_name : "";
 
 
         //MOCKS
         vm.eventList = [];
-
 
 
         vm.player = {

@@ -1,7 +1,7 @@
 <div id="main-host">
     <div id="char-row-host" class="row">
         <div ng-repeat="char in hostVM.charList">
-            <div class="col-xs-24 col-sm-8 col-md-8 col-lg-4">
+            <div class="col-xs-24 col-sm-8 col-md-8 col-lg-4 host-card">
                 <div class="panel panel-primary">
                     <div class="panel-body panel-player">
                         <div class="row">
@@ -19,11 +19,37 @@
                                 <label>Classe: </label>
                                 <span ng-bind="::char.class"></span>
                             </div>
-                            <div class="col-xs-24">
-                                <a class="btn btn-fab btn-danger btn-fab-mini btn-delete btn-icon ng-scope">
-                                    <span class="flaticon-right11"></span>
+                            <div class="col-xs-12">
+                                <a class="btn btn-fab btn-info btn-fab-mini btn-icon pull-left ng-scope">
+                                    <span class="flaticon-can"></span>
                                 </a>
                             </div>
+                            <div class="col-xs-12">
+                                <a class="btn btn-fab btn-primary btn-fab-mini btn-icon pull-right ng-scope"
+                                   ng-click="hostVM.selectChar($index)">
+                                    <span class="flaticon-mark"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-24 col-sm-8 col-md-8 col-lg-4 host-card">
+            <div class="panel panel-primary host-panel-new">
+                <div class="panel-body panel-player">
+                    <div class="row">
+                        <div class="col-xs-24 text-center">
+                            <label>Criar seu personagem</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-24 text-center">
+                            <a class="btn btn-fab btn-primary btn-fab-mini btn-icon ng-scope"
+                               ng-click="hostVM.selectChar($index)">
+                                <span class="flaticon-cross"></span>
+                            </a>
                         </div>
                     </div>
                 </div>

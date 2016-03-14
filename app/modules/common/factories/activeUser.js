@@ -30,5 +30,5 @@
         }
     }
 
-    angular.module('junnyria.common').service('activeUserFactory', activeUserFactory);
+    angular.module('junnyria.common').factory('activeUserFactory', activeUserFactory);
 })();

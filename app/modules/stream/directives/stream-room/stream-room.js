@@ -8,7 +8,7 @@
 (function () {
     "use strict";
 
-    var streamRoom = function(streamService, roomService, $timeout) {
+    var streamRoom = function (streamService, roomService, $timeout) {
         function controller($sce, appSettings) {
 
             if (!window.RTCPeerConnection || !navigator.getUserMedia) {
@@ -17,7 +17,7 @@
             }
 
             var vm = this,
-                stream;
+                stream = undefined;
 
             vm.showSelf = vm.showSelf || false;
             vm.isMaster = vm.isMaster || true;
@@ -56,21 +56,21 @@
 
         function link(scope) {
             roomService.on('peer.stream', function () {
-                $timeout(function() {
+                $timeout(function () {
                     scope.$apply();
                 }, 300);
             });
 
             roomService.on('peer.disconnected', function () {
-                $timeout(function() {
+                $timeout(function () {
                     scope.$apply();
                 }, 300);
             });
 
-            var destroy = scope.$on('$destroy', function() {
+            var destroy = scope.$on('$destroy', function () {
                 roomService.leaveRoom();
                 streamService.leave();
-                console.log("DESTROY STREAM ROOM")
+                console.log("DESTROY STREAM ROOM");
                 destroy();
             });
         }
