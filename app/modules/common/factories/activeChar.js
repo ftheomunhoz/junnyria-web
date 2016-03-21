@@ -9,7 +9,7 @@
     "use strict";
 
     function activeCharFactory() {
-        var char = undefined;
+        var char = {};
 
         return {
             setActiveChar: function(c) {

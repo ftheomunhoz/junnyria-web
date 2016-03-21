@@ -15,6 +15,13 @@
                 }
 
                 return {};
+            },
+            charToActiveChar: function(data) {
+                if (angular.isDefined(data) && angular.isDefined(data.data) && angular.isDefined(data.data.charResult)) {
+                    return data.data.charResult;
+                }
+
+                return {};
             }
         }
     }

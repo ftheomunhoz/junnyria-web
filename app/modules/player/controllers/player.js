@@ -8,13 +8,23 @@
 (function () {
     "use strict";
 
-    function playerController(activeUserFactory, activeCharFactory) {
+    function playerController(activeUserFactory, activeCharFactory, playerService, playerFactory) {
         var vm = this;
 
         var activeUser = activeUserFactory.getActiveUser();
 
         vm.realName = activeUser ? activeUser.given_name : "";
+        vm.activeChar = undefined;
 
+
+
+        playerService.getChar(activeCharFactory.getActiveChar().id).then(function (res) {
+            vm.activeChar = playerFactory.charToActiveChar(res);
+            activeCharFactory.setActiveChar(vm.activeChar);
+        }, function (err) {
+            //TODO: Handle
+            console.log("error getting char info: ", err)
+        });
 
         //MOCKS
         vm.eventList = [];

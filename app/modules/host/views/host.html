@@ -1,6 +1,6 @@
 <div id="main-host">
     <div id="char-row-host" class="row">
-        <div ng-repeat="char in hostVM.charList">
+        <div ng-repeat="char in hostVM.charList" ng-click="hostVM.selectChar($index)">
             <div class="col-xs-24 col-sm-8 col-md-8 col-lg-4 host-card">
                 <div class="panel panel-primary">
                     <div class="panel-body panel-player">

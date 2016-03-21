@@ -9,8 +9,8 @@
 
     function playerService($http, appSettings) {
         return {
-            getChar: function () {
-                return $http.get(appSettings.charEndpoint + '/char');
+            getChar: function (id) {
+                return $http.get(appSettings.charEndpoint + '/char/' + (id || 0));
             }
         }
     }

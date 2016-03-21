@@ -98,7 +98,7 @@
                         <div class="row">
                             <div class="col-xs-20">
                                 <h5 class="panel-header-title">
-                                    <span>NOME DO JOGADOR - RAÇA</span>
+                                    <span ng-bind="::vm.activeChar.general.name"></span><span> - </span><span ng-bind="::vm.activeChar.general.race"></span>
                                     <span>(</span><span ng-bind="::vm.realName"></span><span>)</span>
                                 </h5>
                             </div>
@@ -144,7 +144,7 @@
                                                 <label class="control-label">IDADE APARENTE</label>
 
                                                 <div>
-                                                    <span>34</span>
+                                                    <span ng-bind="::vm.activeChar.general.age"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -154,7 +154,7 @@
                                                 <label class="control-label">DIVINDADE</label>
 
                                                 <div>
-                                                    <span>Siberous</span>
+                                                    <span ng-bind="::vm.activeChar.general.divinity"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -164,7 +164,7 @@
                                                 <label class="control-label">NÍVEL</label>
 
                                                 <div>
-                                                    <span>12</span>
+                                                    <span ng-bind="::vm.activeChar.general.level"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -177,7 +177,7 @@
                                                     <div class="bs-component">
                                                         <div class="progress progress-experience">
                                                             <div class="progress-bar progress-bar-experience"
-                                                                 style="width: 76%;"></div>
+                                                                 ng-style="{'width' : vm.activeChar.general.experience+'%'}"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -194,7 +194,7 @@
                                                     <div class="bs-component">
                                                         <div class="progress progress-experience">
                                                             <div class="progress-bar progress-bar-health"
-                                                                 style="width: 50%;"></div>
+                                                                 ng-style="{ 'width' : 100*(vm.activeChar.attributes.life / vm.activeChar.attributes.maxLife)+'%' }"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -209,7 +209,7 @@
                                                     <div class="bs-component">
                                                         <div class="progress progress-experience">
                                                             <div class="progress-bar progress-bar-mana"
-                                                                 style="width: 90%;"></div>
+                                                                 ng-style="{ 'width' : 100*(vm.activeChar.attributes.mana / vm.activeChar.attributes.maxMana)+'%' }"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -221,7 +221,7 @@
                                                 <label class="control-label">ATAQUE BÁSICO (AB)</label>
 
                                                 <div>
-                                                    <span>8</span>
+                                                    <span ng-bind="::vm.activeChar.attributes.attack"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -231,7 +231,7 @@
                                                 <label class="control-label">CAPACIDADE DEFENSIVA (CD)</label>
 
                                                 <div>
-                                                    <span>6</span>
+                                                    <span ng-bind="::vm.activeChar.attributes.defense"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -244,7 +244,7 @@
                                                 <label class="control-label">TERRA NATAL</label>
 
                                                 <div>
-                                                    <span>Mordor</span>
+                                                    <span ng-bind="::vm.activeChar.general.homeland"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -254,7 +254,7 @@
                                                 <label class="control-label">CLASSE 1</label>
 
                                                 <div>
-                                                    <span>Ladino</span>
+                                                    <span ng-bind="::vm.activeChar.general.firstClass"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -263,7 +263,7 @@
                                                 <label class="control-label">CLASSE 2</label>
 
                                                 <div>
-                                                    <span>-</span>
+                                                    <span ng-bind="::vm.activeChar.general.secondClass"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -272,7 +272,7 @@
                                                 <label class="control-label">CLASSE 3</label>
 
                                                 <div>
-                                                    <span>-</span>
+                                                    <span ng-bind="::vm.activeChar.general.thirdClass"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -284,7 +284,7 @@
                                                 <label class="control-label">INICIATIVA (IN)</label>
 
                                                 <div>
-                                                    <span>1D 8</span>
+                                                    <span ng-bind="::vm.activeChar.attributes.initiative"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-5 col-xs-8 col-sm-8 btn-action-container">
@@ -301,7 +301,7 @@
                                                 <label class="control-label">ACURÁCIA (AC)</label>
 
                                                 <div>
-                                                    <span>1D 10</span>
+                                                    <span ng-bind="::vm.activeChar.attributes.accuracy"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-5 col-xs-8 col-sm-8 btn-action-container">
@@ -318,7 +318,7 @@
                                                 <label class="control-label">EVASÃO (EV)</label>
 
                                                 <div>
-                                                    <span>1D 6</span>
+                                                    <span ng-bind="::vm.activeChar.attributes.evade"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-5 col-xs-8 col-sm-8 btn-action-container">
@@ -335,7 +335,7 @@
                                                 <label class="control-label">ATAQUE PADRÃO</label>
 
                                                 <div>
-                                                    <span>Golpe com Adaga (AB+1d8 [+1AC])</span>
+                                                    <span ng-bind="::vm.activeChar.attributes.basicAction"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-5 col-xs-8 col-sm-8  btn-action-container">
@@ -356,42 +356,42 @@
                                                 <label class="control-label">COMUNICAÇÃO</label>
 
                                                 <div>
-                                                    <span>3</span>
+                                                    <span ng-bind="::vm.activeChar.abilities.communication"></span>
                                                 </div>
                                             </div>
                                             <div class="col-xs-24 col-lg-4">
                                                 <label class="control-label">CONSTITUIÇÃO</label>
 
                                                 <div>
-                                                    <span>3</span>
+                                                    <span ng-bind="::vm.activeChar.abilities.constitution"></span>
                                                 </div>
                                             </div>
                                             <div class="col-xs-24 col-lg-4">
                                                 <label class="control-label">DESTREZA</label>
 
                                                 <div>
-                                                    <span>2</span>
+                                                    <span ng-bind="::vm.activeChar.abilities.dexterity"></span>
                                                 </div>
                                             </div>
                                             <div class="col-xs-24 col-lg-4">
                                                 <label class="control-label">INTELIGÊNCIA</label>
 
                                                 <div>
-                                                    <span>2</span>
+                                                    <span ng-bind="::vm.activeChar.abilities.intelligence"></span>
                                                 </div>
                                             </div>
                                             <div class="col-xs-24 col-lg-4">
                                                 <label class="control-label">PERCEPÇÃO</label>
 
                                                 <div>
-                                                    <span>2</span>
+                                                    <span ng-bind="::vm.activeChar.abilities.perception"></span>
                                                 </div>
                                             </div>
                                             <div class="col-xs-24 col-lg-4">
                                                 <label class="control-label">VONTADE</label>
 
                                                 <div>
-                                                    <span>1</span>
+                                                    <span ng-bind="::vm.activeChar.abilities.will"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -404,14 +404,14 @@
                                         <div class="row">
                                             <div class="col-xs-24">
                                                 <ul class="item-list">
-                                                    <li ng-repeat="h in vm.abilityList">
+                                                    <li ng-repeat="h in ::vm.activeChar.abilities.abilityList">
                                                         <div>
                                                             <label class="control-label">
-                                                                <span ng-bind="h.name"></span>
-                                                                [cx. <span ng-bind="h.cost"></span>]
+                                                                <span ng-bind="h + '_NAME'"></span>
+                                                                [cx. <span ng-bind="h + '_COST'"></span>]
                                                             </label>
                                                         </div>
-                                                        <span ng-bind="h.description"></span>
+                                                        <span ng-bind="h + '_DESC'"></span>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -429,14 +429,14 @@
                                                 <div class="row">
                                                     <div class="col-xs-24">
                                                         <ul class="item-list">
-                                                            <li ng-repeat="m in vm.magicList">
+                                                            <li ng-repeat="m in ::vm.activeChar.magicList">
                                                                 <div>
                                                                     <label class="control-label">
-                                                                        <span ng-bind="m.name"></span>
-                                                                        [cx. <span ng-bind="m.type"></span>]
+                                                                        <span ng-bind="m + '_NAME'"></span>
+                                                                        [cx. <span ng-bind="m + '_COST'"></span>]
                                                                     </label>
                                                                 </div>
-                                                                <span ng-bind="m.description"></span>
+                                                                <span ng-bind="m + '_DESC'"></span>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -479,7 +479,7 @@
                                                             <span>CABEÇA</span>
                                                         </label>
                                                         <div>
-                                                            <span>-</span>
+                                                            <span ng-bind="::vm.activeChar.equipments.head"></span>
                                                         </div>
                                                     </div>
 
@@ -488,7 +488,7 @@
                                                             <span>MÃO DOMINANTE</span>
                                                         </label>
                                                         <div>
-                                                            <span>Adaga [5 PO] (AB + 1d8 [+1 AC])</span>
+                                                            <span ng-bind="::vm.activeChar.equipments.mainHand"></span>
                                                         </div>
                                                     </div>
 
@@ -497,7 +497,7 @@
                                                             <span>MÃO AUXILIAR</span>
                                                         </label>
                                                         <div>
-                                                            <span>-</span>
+                                                            <span ng-bind="::vm.activeChar.equipments.supportHand"></span>
                                                         </div>
                                                     </div>
 
@@ -506,7 +506,7 @@
                                                             <span>TÓRAX</span>
                                                         </label>
                                                         <div>
-                                                            <span>Colete de Couro [5 PO] (+2 CD)</span>
+                                                            <span ng-bind="::vm.activeChar.equipments.chest"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -518,7 +518,7 @@
                                                             <span>PÉS</span>
                                                         </label>
                                                         <div>
-                                                            <span>-</span>
+                                                            <span ng-bind="::vm.activeChar.equipments.feet"></span>
                                                         </div>
                                                     </div>
 
@@ -527,7 +527,7 @@
                                                             <span>ACESSÓRIO I</span>
                                                         </label>
                                                         <div>
-                                                            <span>-</span>
+                                                            <span ng-bind="::vm.activeChar.equipments.firstAccessory"></span>
                                                         </div>
                                                     </div>
 
@@ -536,7 +536,7 @@
                                                             <span>ACESSÓRIO II</span>
                                                         </label>
                                                         <div>
-                                                            <span>-</span>
+                                                            <span ng-bind="::vm.activeChar.equipments.secondAccessory"></span>
                                                         </div>
                                                     </div>
 
@@ -545,7 +545,7 @@
                                                             <span>ACESSÓRIO III</span>
                                                         </label>
                                                         <div>
-                                                            <span>-</span>
+                                                            <span ng-bind="::vm.activeChar.equipments.thirdAccessory"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -564,14 +564,14 @@
                                                 <div class="row">
                                                     <div class="col-xs-24">
                                                         <ul class="item-list">
-                                                            <li ng-repeat="e in vm.equipmentList">
+                                                            <li ng-repeat="e in ::vm.activeChar.inventory.equipmentList">
                                                                 <div>
                                                                     <label class="control-label">
-                                                                        <span ng-bind="e.name"></span>
-                                                                        [<span ng-bind="e.value"></span> PO]
+                                                                        <span ng-bind="e + '_NAME'"></span>
+                                                                        [<span ng-bind="e + '_VALUE'"></span> PO]
                                                                     </label>
                                                                 </div>
-                                                                <span ng-bind="e.description"></span>
+                                                                <span ng-bind="e + '_DESC'"></span>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -582,9 +582,7 @@
                                                     <div class="col-xs-24">
                                                         <label class="control-label">PEÇAS DE OURO (PO)</label>
                                                         <div>
-                                                            <span>
-                                                                10
-                                                            </span>
+                                                            <span ng-bind="::vm.activeChar.inventory.gold"></span>
                                                         </div>
                                                     </div>
                                                 </div>
